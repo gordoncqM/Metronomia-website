@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+<!--
+  Site vitrine Metronomia
+  Charte active : Tech Neumorphisme (Soft UI, fond bleu tech clair)
+  Convention BEM : bloc__élément--modificateur
+  Les titres h1/h2/h3 affichent le nom de la charte graphique en cours.
+-->
 <html lang="fr">
 <head>
+  <!-- Métadonnées & ressources -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Site vitrine — présentation de l'activité et des services.">
   <title>Tech Neumorphisme — Metronomia</title>
+  <!-- Inter (texte) + JetBrains Mono (accent logo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -12,10 +20,12 @@
 </head>
 <body>
 
+  <!-- En-tête sticky : logo + navigation ancres -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="logo">Metronom<span class="logo__accent">ia</span></a>
 
+      <!-- Menu mobile (toggle géré par js/main.js) -->
       <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -35,6 +45,7 @@
 
   <main>
 
+    <!-- Section hero : accroche + CTA principaux -->
     <section class="hero" id="accueil">
       <div class="container hero__inner">
         <h1 class="hero__title">Tech Neumorphisme</h1>
@@ -48,6 +59,7 @@
       </div>
     </section>
 
+    <!-- Grille de 3 cartes services -->
     <section class="section" id="services">
       <div class="container">
         <header class="section__header">
@@ -72,6 +84,7 @@
       </div>
     </section>
 
+    <!-- À propos : texte + liste + placeholder visuel -->
     <section class="section section--alt" id="apropos">
       <div class="container about">
         <div class="about__content">
@@ -88,12 +101,14 @@
             <li>Engagement qualité</li>
           </ul>
         </div>
+        <!-- Remplacer le placeholder par une image dans assets/images/ -->
         <div class="about__visual" aria-hidden="true">
           <div class="about__placeholder">Image ou visuel</div>
         </div>
       </div>
     </section>
 
+    <!-- Formulaire de contact (validation native HTML5 + feedback JS) -->
     <section class="section" id="contact">
       <div class="container">
         <header class="section__header">
@@ -115,6 +130,7 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn--primary">Envoyer</button>
+          <!-- Messages succès/erreur injectés par main.js -->
           <p class="form__feedback" id="form-feedback" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -122,6 +138,7 @@
 
   </main>
 
+  <!-- Pied de page : copyright dynamique (#year) + liens ancres -->
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
@@ -134,6 +151,7 @@
     </div>
   </footer>
 
+  <!-- Interactions : menu mobile, année footer, formulaire -->
   <script src="js/main.js"></script>
 </body>
 </html>

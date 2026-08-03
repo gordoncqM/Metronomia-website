@@ -1,8 +1,13 @@
 /* =============================================
    Charte graphique — Tech Neumorphisme
    Fond bleu tech clair (Soft UI)
+
+   Principe : éléments surélevés (raised) ou enfoncés (pressed)
+   via des ombres doubles — sombre en bas/droite, claire en haut/gauche.
+   Adapter --shadow-neu-dark / --shadow-neu-light si le fond change.
    ============================================= */
 
+/* --- Reset global --- */
 *,
 *::before,
 *::after {
@@ -11,22 +16,27 @@
   padding: 0;
 }
 
+/* --- Design tokens --- */
 :root {
-  /* Palette neumorphique — bleu tech clair */
+  /* Surfaces : bg et surface partagent la même teinte (requis pour le neumorphisme) */
   --color-bg: #c5d8ef;
-  --color-bg-alt: #b8cce6;
+  --color-bg-alt: #b8cce6;       /* sections alternées, champs formulaire */
   --color-surface: #c5d8ef;
+
+  /* Accents tech */
   --color-primary: #0088cc;
   --color-primary-light: #33aaee;
   --color-primary-dark: #006da3;
   --color-accent: #5b6fd6;
+
+  /* Texte */
   --color-text: #152535;
   --color-text-muted: #4a6280;
   --color-border: rgba(255, 255, 255, 0.35);
 
-  /* Ombres neumorphiques — teintées bleu */
-  --shadow-neu-dark: rgba(90, 125, 170, 0.48);
-  --shadow-neu-light: rgba(230, 242, 255, 0.92);
+  /* Ombres neumorphiques — teintées bleu pour fond #c5d8ef */
+  --shadow-neu-dark: rgba(90, 125, 170, 0.48);   /* ombre portée */
+  --shadow-neu-light: rgba(230, 242, 255, 0.92); /* reflet lumineux */
   --shadow-neu-raised:
     8px 8px 16px var(--shadow-neu-dark),
     -8px -8px 16px var(--shadow-neu-light);
@@ -42,6 +52,7 @@
   --shadow-glow: 0 4px 20px rgba(0, 136, 204, 0.25);
   --shadow-glow-strong: 0 6px 28px rgba(0, 136, 204, 0.35);
 
+  /* Typographie & espacements */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
@@ -93,7 +104,7 @@ ul {
 }
 
 /* =============================================
-   Layout
+   Layout — conteneur & sections
    ============================================= */
 
 .container {
@@ -127,6 +138,7 @@ ul {
   letter-spacing: -0.02em;
 }
 
+/* Trait accent dégradé sous les titres de section */
 .section__title::after {
   content: "";
   display: block;
@@ -164,7 +176,7 @@ ul {
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  background-color: rgba(197, 216, 239, 0.92);
+  background-color: rgba(197, 216, 239, 0.92); /* correspond à --color-bg */
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-neu-raised-sm);
 }
@@ -204,6 +216,7 @@ ul {
   transition: color var(--transition), box-shadow var(--transition);
 }
 
+/* Hover : effet enfoncé (pressed) */
 .nav__link:hover,
 .nav__link:focus-visible {
   color: var(--color-primary);
@@ -224,6 +237,7 @@ ul {
   box-shadow: var(--shadow-neu-raised-sm), var(--shadow-glow-strong);
 }
 
+/* Bouton hamburger — visible uniquement en mobile */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -285,7 +299,7 @@ ul {
 }
 
 /* =============================================
-   Buttons
+   Buttons — primary (gradient) / secondary (neu)
    ============================================= */
 
 .btn {
@@ -335,7 +349,7 @@ ul {
 }
 
 /* =============================================
-   Cards
+   Cards — panneaux surélevés, barre lumineuse au hover
    ============================================= */
 
 .cards {
@@ -354,6 +368,7 @@ ul {
   overflow: hidden;
 }
 
+/* Barre gradient révélée au survol */
 .card::before {
   content: "";
   position: absolute;
@@ -385,6 +400,7 @@ ul {
   gap: var(--space-xs);
 }
 
+/* Pastille indicateur devant le titre */
 .card__title::before {
   content: "";
   display: inline-block;
@@ -402,7 +418,7 @@ ul {
 }
 
 /* =============================================
-   About
+   About — grille 2 colonnes (1 en mobile)
    ============================================= */
 
 .about {
@@ -453,6 +469,7 @@ ul {
   box-shadow: var(--shadow-neu-raised-sm);
 }
 
+/* Zone visuel enfoncée (effet encastré) */
 .about__placeholder {
   aspect-ratio: 4 / 3;
   display: flex;
@@ -467,7 +484,7 @@ ul {
 }
 
 /* =============================================
-   Form
+   Form — champs enfoncés, panneau surélevé
    ============================================= */
 
 .form {
@@ -573,7 +590,8 @@ ul {
 }
 
 /* =============================================
-   Responsive
+   Responsive — breakpoint tablette/mobile
+   Nav slide-in + grille about en colonne unique
    ============================================= */
 
 @media (max-width: 768px) {
@@ -611,6 +629,7 @@ ul {
     margin-top: var(--space-xs);
   }
 
+  /* Animation croix du hamburger (classe .is-active ajoutée par JS) */
   .nav-toggle.is-active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
