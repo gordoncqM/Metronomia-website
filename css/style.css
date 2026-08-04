@@ -19,7 +19,7 @@
 /* --- Design tokens --- */
 :root {
   /* Surfaces : bg et surface partagent la même teinte (requis pour le neumorphisme) */
-  --color-bg: #c5d8ef;
+  --color-bg: #c4d7ee;
   --color-bg-alt: #b8cce6;       /* sections alternées, champs formulaire */
   --color-surface: #c5d8ef;
 
@@ -80,7 +80,8 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
-  background-color: var(--color-bg);
+  /* Couleur de fond principal du site vitrine */
+  background-color: rgba(212, 217, 236, 0.92);
   min-height: 100vh;
 }
 
@@ -654,3 +655,19 @@ ul {
     padding: var(--space-md);
   }
 }
+
+
+/* Force le footer à rester en bas de la page */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Hauteur minimale = 100% de la hauteur de l'écran */
+}
+
+.footer {
+  margin-top: auto; /* Pousse le footer vers le bas */
+  padding: 20px 0; /* Espace interne pour le confort visuel */
+  background-color: rgba(212, 217, 236, 0.92);; /* Optionnel : fond pour le footer */
+  text-align: center; /* Centre le texte (optionnel) */
+}
+

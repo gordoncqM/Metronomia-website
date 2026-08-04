@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  Page À propos — Metronomia
+  Charte active : Tech Neumorphisme (Soft UI, fond bleu tech clair)
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="À propos — Metronomia">
+  <title>À propos — Metronomia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html#accueil" class="nav__link">Accueil</a></li>
+          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="apropos.html" class="nav__link">À propos</a></li>
+          <li><a href="index.html#contact" class="nav__link nav__link--cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- apropos.html -->
+    <!-- Grille de 3 cartes services -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section__header">
+          <h2 href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></h2>
+          <p class="section__intro">Présentez ici l'information concernant [Nom de l'entreprise].</p>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Notre histoire</h3>
+            <p class="card__text">Description courte de l'histoire de metronomia.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Notre equipe</h3>
+            <p class="card__text">Fondée en 2026, nous avons commencé comme une petite equipe...</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Fondateur et Ceo</h3>
+            <p class="card__text">Information concernant Philippe Le Mounier.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Ce que disent nos clients</h3>
+            <p class="card__text">Découvrez les retours de ceux qui nous ont fait confiance</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+</header>
+
+
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
