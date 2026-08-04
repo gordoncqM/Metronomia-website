@@ -21,13 +21,14 @@
     <div class="container header__inner">
       <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle__checkbox" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
         <span></span>
         <span></span>
         <span></span>
-      </button>
+      </label>
 
-      <nav class="nav" id="nav" aria-label="Navigation principale">
+      <nav class="nav" aria-label="Navigation principale">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Accueil</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
@@ -289,7 +290,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+      <p class="footer__copy">&copy; 2026 — Tous droits réservés</p>
       <nav class="footer__nav" aria-label="Liens du pied de page">
         <a href="index.html">Accueil</a>
         <a href="services.html">Services</a>
@@ -300,6 +301,5 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
