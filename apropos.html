@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez Metronomia : notre histoire, notre équipe, nos valeurs et ce que disent nos clients.">
+  <meta name="description" content="Découvrez Metronomia : notre histoire, notre équipe et nos valeurs.">
   <title>À propos — Metronomia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header -->
+
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
@@ -26,126 +26,113 @@
       </button>
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <ul class="nav__list">
-          <li><a href="index.html#accueil" class="nav__link">Accueil</a></li>
-          <li><a href="index.html#services" class="nav__link">Services</a></li>
-          <li><a href="apropos.html" class="nav__link nav__link--active">À propos</a></li>
-          <li><a href="index.html#contact" class="nav__link nav__link--cta">Contact</a></li>
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="projets.html" class="nav__link">Nos projets</a></li>
+          <li><a href="apropos.html" class="nav__link nav__link--active" aria-current="page">À propos</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Section Hero (optionnelle) -->
-    <section class="section section--hero">
-      <div class="container">
-        <h1 class="section__title">À propos de Metronomia</h1>
-        <p class="section__intro">
-          Nous sommes une entreprise innovante spécialisée dans [domaine d'activité, ex: "les solutions technologiques sur mesure"].
-          Notre mission : [résumer la mission en une phrase percutante].
+
+    <section class="hero" id="apropos-hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">À propos de Metronomia</h1>
+        <p class="hero__subtitle">
+          Nous sommes une entreprise innovante spécialisée dans les solutions technologiques sur mesure.
+          Notre mission : accompagner vos projets digitaux avec expertise et écoute.
         </p>
       </div>
     </section>
 
-    <!-- Section Histoire -->
-    <section class="section" id="histoire">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Notre histoire</h2>
-          <p class="section__subtitle">
-            Fondée en 2026, Metronomia est née de la volonté de [expliquer brièvement l'origine].
-          </p>
-        </header>
-        <div class="timeline">
-          <div class="timeline__item">
-            <div class="timeline__date">2026</div>
-            <div class="timeline__content">
-              <h3>Création de Metronomia</h3>
-              <p>L'entreprise a été fondée par Philippe Le Mounier avec pour objectif de [objectif initial].</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__date">2027</div>
-            <div class="timeline__content">
-              <h3>Première innovation</h3>
-              <p>Lancement de [nom du premier produit/service], qui a marqué un tournant dans [secteur].</p>
-            </div>
-          </div>
+    <section class="section section--alt" id="histoire">
+      <div class="container about">
+        <div class="about__content">
+          <header class="section__header section__header--left">
+            <h2 class="section__title">Notre histoire</h2>
+            <p class="section__intro">
+              Fondée en 2026, Metronomia est née de la volonté d'offrir un accompagnement
+              technologique accessible, rigoureux et orienté résultats.
+            </p>
+          </header>
+          <ul class="about__list">
+            <li>2026 — Création de Metronomia</li>
+            <li>2027 — Première innovation majeure</li>
+            <li>Aujourd'hui — Accompagnement de projets sur mesure</li>
+          </ul>
+        </div>
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__placeholder">Notre parcours</div>
         </div>
       </div>
     </section>
 
-    <!-- Section Équipe -->
     <section class="section" id="equipe">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title">Notre équipe</h2>
-          <p class="section__subtitle">Une équipe passionnée et experte à votre service.</p>
+          <p class="section__intro">Une équipe passionnée et experte à votre service.</p>
         </header>
-        <div class="team-grid">
-          <article class="team-card">
-            <div class="team-card__avatar" aria-label="Photo de Philippe Le Mounier"></div>
-            <h3 class="team-card__name">Philippe Le Mounier</h3>
-            <p class="team-card__role">Fondateur & CEO</p>
-            <p class="team-card__bio">[Brève description : ex: "10 ans d'expérience dans le développement de solutions technologiques."]</p>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Philippe Le Mounier</h3>
+            <p class="card__text">Fondateur &amp; CEO — 10 ans d'expérience dans le développement de solutions technologiques.</p>
           </article>
-          <!-- Ajoute d'autres membres ici -->
         </div>
       </div>
     </section>
 
-    <!-- Section Valeurs -->
-    <section class="section" id="valeurs">
+    <section class="section section--alt" id="valeurs">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title">Nos valeurs</h2>
         </header>
-        <div class="values-grid">
-          <article class="value-card">
-            <h3 class="value-card__title">Innovation</h3>
-            <p class="value-card__text">Nous repoussons les limites pour offrir des solutions uniques.</p>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Innovation</h3>
+            <p class="card__text">Nous repoussons les limites pour offrir des solutions uniques.</p>
           </article>
-          <article class="value-card">
-            <h3 class="value-card__title">Collaboration</h3>
-            <p class="value-card__text">Travailler ensemble pour atteindre l'excellence.</p>
+          <article class="card">
+            <h3 class="card__title">Collaboration</h3>
+            <p class="card__text">Travailler ensemble pour atteindre l'excellence.</p>
           </article>
-          <article class="value-card">
-            <h3 class="value-card__title">Transparence</h3>
-            <p class="value-card__text">Une communication claire et honnête avec nos clients.</p>
+          <article class="card">
+            <h3 class="card__title">Transparence</h3>
+            <p class="card__text">Une communication claire et honnête avec nos clients.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Section Témoignages -->
     <section class="section" id="temoinages">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title">Ce que disent nos clients</h2>
         </header>
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <blockquote class="testimonial-card__quote">
-              "Metronomia a transformé notre façon de travailler. Leurs solutions sont à la fois puissantes et intuitives."
-            </blockquote>
-            <p class="testimonial-card__author">— Jean Dupont, [Entreprise]</p>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Jean Dupont</h3>
+            <p class="card__text">« Metronomia a transformé notre façon de travailler. Leurs solutions sont à la fois puissantes et intuitives. »</p>
           </article>
-          <!-- Ajoute d'autres témoignages ici -->
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__links">
-        <a href="index.html" class="footer__link">Accueil</a>
-        <a href="apropos.html" class="footer__link">À propos</a>
-        <a href="index.html#contact" class="footer__link">Contact</a>
-      </div>
-      <p class="footer__copy">&copy; <span id="year"></span> Metronomia — Tous droits réservés</p>
+      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+      <nav class="footer__nav" aria-label="Liens du pied de page">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="projets.html">Nos projets</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
 
