@@ -34,10 +34,11 @@
 
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="index.html" class="nav__link nav__link--active" aria-current="page">Accueil</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="projets.html" class="nav__link">Nos projets</a></li>
           <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
-          <li><a href="index.html#contact" class="nav__link nav__link--cta">Contact</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -48,12 +49,15 @@
     <!-- Section hero : accroche + CTA principaux -->
     <section class="hero" id="accueil">
       <div class="container hero__inner">
-        <h1 class="hero__title">Tech Neumorphisme</h1>
-        <p class="hero__subtitle">
-          Une phrase d'accroche pour présenter votre activité et capter l'attention de vos visiteurs.
+        <h1 class="hero__title hero__title--brand">
+          Metronom<span class="hero__title-accent">IA</span>
+        </h1>
+        <p class="hero__subtitle hero__subtitle--featured">
+          La <strong class="hero__subtitle-highlight">technologie</strong> à votre mesure,
+          l’<strong class="hero__subtitle-highlight">expertise</strong> à votre écoute.
         </p>
         <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary">Nous contacter</a>
+          <a href="contact.html" class="btn btn--primary">Nous contacter</a>
           <a href="services.html" class="btn btn--secondary">Découvrir nos services</a>
         </div>
       </div>
@@ -63,22 +67,22 @@
     <section class="section" id="services">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title">Tech Neumorphisme</h2>
-          <p class="section__intro">Présentez ici ce que vous proposez à vos clients.</p>
+          <h2 class="section__title">Nos domaines d'expertise</h2>
+          <p class="section__intro">Nous couvrons tous les terrains d'un projet digital et numérique afin de vous garantir une solution complète et adaptée à vos besoins.</p>
         </header>
 
         <div class="cards">
           <article class="card">
-            <h3 class="card__title">Tech Neumorphisme</h3>
-            <p class="card__text">Description courte du premier service ou de la première offre.</p>
+            <h3 class="card__title">Developpement fullstack</h3>
+            <p class="card__text">Nous couvrons tout projets de développement web ou mobile afin d'assurer une solution complète.</p>
           </article>
           <article class="card">
-            <h3 class="card__title">Tech Neumorphisme</h3>
-            <p class="card__text">Description courte du deuxième service ou de la deuxième offre.</p>
+            <h3 class="card__title">Suivi et conseils clients</h3>
+            <p class="card__text">Nous intervenons au coeur de vos projets afin de vous procurez les outils nécessaires pour vous accompagner dans vos démarches. à vos ambtions.</p>
           </article>
           <article class="card">
-            <h3 class="card__title">Tech Neumorphisme</h3>
-            <p class="card__text">Description courte du troisième service ou de la troisième offre.</p>
+            <h3 class="card__title">Maintenance et support</h3>
+            <p class="card__text">Même aprés la livraison nous vous accompagnons dans votre exprience numérique afin de vous garantir un support continu et une évolution constante.</p>
           </article>
         </div>
       </div>
@@ -108,34 +112,6 @@
       </div>
     </section>
 
-    <!-- Formulaire de contact (validation native HTML5 + feedback JS) -->
-    <section class="section" id="contact">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Tech Neumorphisme</h2>
-          <p class="section__intro">Une question ? Écrivez-nous, nous vous répondrons rapidement.</p>
-        </header>
-
-        <form class="form" id="contact-form" novalidate>
-          <div class="form__group">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name" required autocomplete="name">
-          </div>
-          <div class="form__group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required autocomplete="email">
-          </div>
-          <div class="form__group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary">Envoyer</button>
-          <!-- Messages succès/erreur injectés par main.js -->
-          <p class="form__feedback" id="form-feedback" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
   </main>
 
   <!-- Pied de page : copyright dynamique (#year) + liens ancres -->
@@ -145,8 +121,9 @@
       <nav class="footer__nav" aria-label="Liens du pied de page">
         <a href="index.html">Accueil</a>
         <a href="services.html">Services</a>
+        <a href="projets.html">Nos projets</a>
         <a href="index.html#apropos">À propos</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </footer>
