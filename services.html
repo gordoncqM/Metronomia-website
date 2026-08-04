@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+  Page Services — Metronomia
+  Charte : Tech Neumorphisme (css/style.css partagé avec index.html)
+  Convention BEM : bloc__élément--modificateur
+-->
+<html lang="fr">
+<head>
+  <!-- Métadonnées & ressources (identiques à index.html) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez nos services — Metronomia.">
+  <title>Services — Tech Neumorphisme — Metronomia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- En-tête sticky : logo + navigation inter-pages -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a></li>
+          <li><a href="projets.html" class="nav__link">Nos projets</a></li>
+          <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero de page : titre + introduction services -->
+    <section class="hero" id="services-hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Nos services</h1>
+        <p class="hero__subtitle">
+          Découvrez l'ensemble de nos prestations. Chaque service est pensé pour répondre
+          à vos besoins avec rigueur et accompagnement personnalisé.
+        </p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn--primary">Demander un devis</a>
+          <a href="#offres" class="btn btn--secondary">Voir les offres</a>
+          <a href="#methode" class="btn btn--secondary">Suivi client</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grille détaillée des services -->
+    <section class="section" id="offres">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title"></h2>
+          <p class="section__intro">
+            Plusieurs domaines d'expertise pour vous accompagner de la conception à la livraison.
+          </p>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Developpement de site vitrine</h3>
+            <p class="card__text">
+              Conception et développement de sites vitrines modernes, accessibles et adaptés
+              à tous les écrans. Une présence en ligne soignée qui reflète votre image.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Suivi client</h3>
+            <p class="card__text">
+              Accompagnement stratégique : audit, recommandations et feuille de route
+              pour structurer votre projet digital et atteindre vos objectifs.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Maintenance et support</h3>
+            <p class="card__text">
+              Maintenance, mises à jour et support continu pour garantir performance,
+              sécurité et évolutivité de vos outils dans la durée.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Conception de charte graphique</h3>
+            <p class="card__text">
+              Identité visuelle et chartes graphiques sur mesure — du wireframe au
+              déploiement CSS, en cohérence avec votre marque.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Référencement naturel</h3>
+            <p class="card__text">
+              Optimisation des performances et du référencement naturel pour améliorer
+              votre visibilité et l'expérience de vos visiteurs.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Documentations techniques</h3>
+            <p class="card__text">
+              Formation et transfert de compétences pour que vous puissiez gérer
+              votre site en autonomie, en toute confiance.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandeau alterné : méthode de travail -->
+    <section class="section section--alt" id="methode">
+      <div class="container about">
+        <div class="about__content">
+          <header class="section__header section__header--left">
+            <h2 class="section__title">Démarche avec la clientèle</h2>
+            <p class="section__intro">
+              Notre approche repose sur l'écoute, la transparence et un suivi régulier
+              à chaque étape de votre projet.
+            </p>
+          </header>
+          <ul class="about__list">
+            <li>Analyse de vos besoins et de votre contexte</li>
+            <li>Proposition sur mesure et devis détaillé</li>
+            <li>Réalisation itérative avec points de validation</li>
+            <li>Livraison, formation et support post-projet</li>
+          </ul>
+        </div>
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__placeholder">Illustration processus</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appel à l'action final -->
+    <section class="section" id="cta-services">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Demande de prestations</h2>
+          <p class="section__intro">
+            Un projet en tête ? Parlons-en et construisons ensemble la solution adaptée à vos ambitions.
+          </p>
+        </header>
+        <div class="hero__actions hero__actions--center">
+          <a href="contact.html" class="btn btn--primary">Nous contacter</a>
+          <a href="index.html" class="btn btn--secondary">Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page : liens inter-pages -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+      <nav class="footer__nav" aria-label="Liens du pied de page">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="projets.html">Nos projets</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+  Page Nos projets — Metronomia
+  Charte : Tech Neumorphisme (css/style.css partagé)
+  Convention BEM : bloc__élément--modificateur
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez nos réalisations par domaine d'activité — Metronomia.">
+  <title>Nos projets — Tech Neumorphisme — Metronomia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="projets.html" class="nav__link nav__link--active" aria-current="page">Nos projets</a></li>
+          <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="projets-hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Nos projets</h1>
+        <p class="hero__subtitle">
+          Un aperçu de nos réalisations, classées par domaine d'activité.
+          Chaque projet reflète notre engagement envers la qualité et l'accompagnement sur mesure.
+        </p>
+        <div class="hero__actions">
+          <a href="#sites-vitrines" class="btn btn--secondary">Sites vitrines</a>
+          <a href="#identite-visuelle" class="btn btn--secondary">Identité visuelle</a>
+          <a href="#seo-performance" class="btn btn--secondary">SEO & performance</a>
+          <a href="contact.html" class="btn btn--primary">Discuter d'un projet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domaine : Sites vitrines -->
+    <section class="section" id="sites-vitrines">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Sites vitrines</h2>
+          <p class="section__intro">
+            Des sites web modernes, accessibles et adaptés à tous les écrans pour valoriser votre activité en ligne.
+          </p>
+        </header>
+
+        <div class="project-cards">
+          <article class="project-card">
+            <div class="project-card__media">
+              <!-- Remplacer le placeholder par : <img src="assets/images/projet-artisan.jpg" alt="Site vitrine Artisan du bâtiment" class="project-card__image"> -->
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">HTML / CSS</span>
+              <h3 class="project-card__title">Artisan du bâtiment</h3>
+              <p class="project-card__text">
+                Site vitrine responsive pour une entreprise artisanale : présentation des services,
+                galerie de réalisations et formulaire de contact.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Responsive</span>
+              <h3 class="project-card__title">Cabinet de conseil</h3>
+              <p class="project-card__text">
+                Refonte complète d'un site institutionnel avec navigation claire,
+                pages de services détaillées et charte graphique cohérente.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__body">
+              <span class="project-card__tag">Landing page</span>
+              <h3 class="project-card__title">Lancement produit</h3>
+              <p class="project-card__text">
+                Page d'atterrissage optimisée pour une campagne marketing,
+                avec appels à l'action ciblés et suivi des conversions.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domaine : Identité visuelle -->
+    <section class="section section--alt" id="identite-visuelle">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Identité visuelle</h2>
+          <p class="section__intro">
+            Chartes graphiques, logos et univers visuels pensés pour renforcer l'image de marque de nos clients.
+          </p>
+        </header>
+
+        <div class="project-cards">
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Charte graphique</span>
+              <h3 class="project-card__title">Startup tech</h3>
+              <p class="project-card__text">
+                Création d'une identité visuelle complète : logo, palette de couleurs,
+                typographies et déclinaisons pour le web et les supports print.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">UI Design</span>
+              <h3 class="project-card__title">Application mobile</h3>
+              <p class="project-card__text">
+                Conception de l'interface utilisateur et des composants UI
+                pour une application mobile orientée productivité.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__body">
+              <span class="project-card__tag">Rebranding</span>
+              <h3 class="project-card__title">Association locale</h3>
+              <p class="project-card__text">
+                Modernisation de l'identité visuelle d'une association :
+                nouveau logo, guidelines et déploiement sur le site existant.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domaine : SEO & performance -->
+    <section class="section" id="seo-performance">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">SEO & performance</h2>
+          <p class="section__intro">
+            Optimisations techniques et éditoriales pour améliorer la visibilité et l'expérience utilisateur.
+          </p>
+        </header>
+
+        <div class="project-cards">
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Audit SEO</span>
+              <h3 class="project-card__title">E-commerce local</h3>
+              <p class="project-card__text">
+                Audit complet du référencement naturel, correction des balises meta,
+                amélioration de la structure et du maillage interne.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__body">
+              <span class="project-card__tag">Core Web Vitals</span>
+              <h3 class="project-card__title">Optimisation vitesse</h3>
+              <p class="project-card__text">
+                Réduction du temps de chargement de 40 % grâce à la compression d'images,
+                au lazy loading et à l'optimisation du CSS critique.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Accessibilité</span>
+              <h3 class="project-card__title">Mise aux normes WCAG</h3>
+              <p class="project-card__text">
+                Audit et corrections d'accessibilité pour atteindre le niveau AA :
+                contrastes, navigation clavier et textes alternatifs.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domaine : Maintenance & support -->
+    <section class="section section--alt" id="maintenance">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Maintenance & support</h2>
+          <p class="section__intro">
+            Accompagnement continu pour garantir la fiabilité, la sécurité et l'évolution des outils digitaux.
+          </p>
+        </header>
+
+        <div class="project-cards">
+          <article class="project-card">
+            <div class="project-card__body">
+              <span class="project-card__tag">Support</span>
+              <h3 class="project-card__title">Portail client</h3>
+              <p class="project-card__text">
+                Mise en place d'un contrat de maintenance avec mises à jour mensuelles,
+                sauvegardes automatiques et assistance prioritaire.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Migration</span>
+              <h3 class="project-card__title">Migration hébergeur</h3>
+              <p class="project-card__text">
+                Transfert sécurisé d'un site vers un nouvel hébergement avec zéro interruption
+                de service et configuration SSL renouvelée.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Documentation</span>
+              <h3 class="project-card__title">Guide administrateur</h3>
+              <p class="project-card__text">
+                Rédaction d'une documentation technique complète pour permettre
+                au client de gérer son site en autonomie.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cta-projets">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Votre projet, notre prochaine réalisation</h2>
+          <p class="section__intro">
+            Vous avez un projet similaire ? Contactez-nous pour en discuter et obtenir un devis personnalisé.
+          </p>
+        </header>
+        <div class="hero__actions hero__actions--center">
+          <a href="contact.html" class="btn btn--primary">Nous contacter</a>
+          <a href="services.html" class="btn btn--secondary">Voir nos services</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+      <nav class="footer__nav" aria-label="Liens du pied de page">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="projets.html">Nos projets</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

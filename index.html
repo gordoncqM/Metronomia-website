@@ -1,89 +1,101 @@
 <!DOCTYPE html>
+
 <!--
+
   Site vitrine Metronomia
-  Charte active : Tech Neumorphisme (Soft UI, fond bleu tech clair)
-  Convention BEM : bloc__élément--modificateur
   Les titres h1/h2/h3 affichent le nom de la charte graphique en cours.
+
+  Charte active : Tech Neumorphisme (Soft UI, fond bleu tech clair)
+
+  Convention BEM : bloc__élément--modificateur
+
 -->
+
 <html lang="fr">
+
 <head>
+
   <!-- Métadonnées & ressources -->
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site vitrine — présentation de l'activité et des services.">
-  <title>Tech Neumorphisme — Metronomia</title>
-  <!-- Inter (texte) + JetBrains Mono (accent logo) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
   <!-- En-tête sticky : logo + navigation ancres -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#" class="logo">Metronom<span class="logo__accent">ia</span></a>
+  <meta name="description" content="Site vitrine — présentation de l'activité et des services.">
 
-      <!-- Menu mobile (toggle géré par js/main.js) -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <title>Tech Neumorphisme — Metronomia</title>
 
-      <nav class="nav" id="nav" aria-label="Navigation principale">
-        <ul class="nav__list">
+  <!-- Inter (texte) + JetBrains Mono (accent logo) -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
           <li><a href="#accueil" class="nav__link">Accueil</a></li>
           <li><a href="#services" class="nav__link">Services</a></li>
           <li><a href="apropos.html" class="nav__link">À propos</a></li>
           <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+=======
 
-  <main>
+</head>
 
-    <!-- Section hero : accroche + CTA principaux -->
-    <section class="hero" id="accueil">
-      <div class="container hero__inner">
-        <h1 class="hero__title">Tech Neumorphisme</h1>
-        <p class="hero__subtitle">
-          Une phrase d'accroche pour présenter votre activité et capter l'attention de vos visiteurs.
-        </p>
-        <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary">Nous contacter</a>
-          <a href="#services" class="btn btn--secondary">Découvrir nos services</a>
-        </div>
-      </div>
-    </section>
+          <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+
+>>>>>>> 71793f99b14b895a80c2e01054654b2dbf246bce
+
+
+  <!-- En-tête sticky : logo + navigation inter-pages -->
+
+  <header class="header" id="header">
+
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
+
+
+
+      <!-- Menu mobile (toggle géré par js/main.js) -->
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+      </button>
 
     <!-- Grille de 3 cartes services -->
-    <section class="section" id="services">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Tech Neumorphisme</h2>
-          <p class="section__intro">Présentez ici ce que vous proposez à vos clients.</p>
-        </header>
 
-        <div class="cards">
-          <article class="card">
-            <h3 class="card__title">Tech Neumorphisme</h3>
-            <p class="card__text">Description courte du premier service ou de la première offre.</p>
-          </article>
-          <article class="card">
-            <h3 class="card__title">Tech Neumorphisme</h3>
-            <p class="card__text">Description courte du deuxième service ou de la deuxième offre.</p>
-          </article>
-          <article class="card">
-            <h3 class="card__title">Tech Neumorphisme</h3>
-            <p class="card__text">Description courte du troisième service ou de la troisième offre.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
 
+        <ul class="nav__list">
+
+          <li><a href="index.html" class="nav__link nav__link--active" aria-current="page">Accueil</a></li>
+
+          <li><a href="services.html" class="nav__link">Services</a></li>
+
+          <li><a href="projets.html" class="nav__link">Nos projets</a></li>
+
+          <li><a href="apropos.html" class="nav__link">À propos</a></li>
+
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+<<<<<<< HEAD
     <!-- Formulaire de contact (validation native HTML5 + feedback JS) -->
     <section class="section" id="contact">
       <div class="container">
@@ -109,25 +121,165 @@
           <!-- Messages succès/erreur injectés par main.js -->
           <p class="form__feedback" id="form-feedback" role="status" aria-live="polite"></p>
         </form>
+=======
+    <!-- À propos : texte + liste + placeholder visuel -->
+    <section class="section section--alt" id="apropos">
+      <div class="container about">
+        <div class="about__content">
+          <header class="section__header section__header--left">
+            <h2 class="section__title">Tech Neumorphisme</h2>
+            <p class="section__intro">
+              Racontez votre histoire, vos valeurs et ce qui vous distingue. Ce bloc est pensé pour
+              inspirer confiance et donner envie de vous contacter.
+            </p>
+          </header>
+          <ul class="about__list">
+            <li>Expérience et expertise</li>
+            <li>Approche personnalisée</li>
+            <li>Engagement qualité</li>
+          </ul>
+        </div>
+        <!-- Remplacer le placeholder par une image dans assets/images/ -->
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__placeholder">Image ou visuel</div>
+        </div>
+>>>>>>> 71793f99b14b895a80c2e01054654b2dbf246bce
       </div>
     </section>
 
-  </main>
 
+  <main>
   <!-- Pied de page : copyright dynamique (#year) + liens ancres -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
-      <nav class="footer__nav" aria-label="Liens du pied de page">
+
+
+    <!-- Section hero : accroche + CTA principaux -->
+
+<<<<<<< HEAD
         <a href="#accueil">Accueil</a>
         <a href="#services">Services</a>
         <a href="apropos.html">À propos</a>
         <a href="#contact">Contact</a>
+=======
+    <section class="hero" id="accueil">
+
+      <div class="container hero__inner">
+        <a href="index.html#apropos">À propos</a>
+        <h1 class="hero__title hero__title--brand">
+>>>>>>> 71793f99b14b895a80c2e01054654b2dbf246bce
+
+          Metronom<span class="hero__title-accent">IA</span>
+
+        </h1>
+
+        <p class="hero__subtitle hero__subtitle--featured">
+
+          La <strong class="hero__subtitle-highlight">technologie</strong> à votre mesure,
+
+          l’<strong class="hero__subtitle-highlight">expertise</strong> à votre écoute.
+
+        </p>
+
+        <div class="hero__actions">
+
+          <a href="contact.html" class="btn btn--primary">Nous contacter</a>
+
+          <a href="services.html" class="btn btn--secondary">Découvrir nos services</a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Aperçu des domaines d'expertise -->
+
+    <section class="section" id="services">
+
+      <div class="container">
+
+        <header class="section__header">
+
+          <h2 class="section__title">Nos domaines d'expertise</h2>
+
+          <p class="section__intro">Nous couvrons tous les terrains d'un projet digital et numérique afin de vous garantir une solution complète et adaptée à vos besoins.</p>
+
+        </header>
+
+
+
+        <div class="cards">
+
+          <article class="card">
+
+            <h3 class="card__title">Developpement fullstack</h3>
+
+            <p class="card__text">Nous couvrons tout projets de développement web ou mobile afin d'assurer une solution complète.</p>
+
+          </article>
+
+          <article class="card">
+
+            <h3 class="card__title">Suivi et conseils clients</h3>
+
+            <p class="card__text">Nous intervenons au coeur de vos projets afin de vous procurez les outils nécessaires pour vous accompagner dans vos démarches. à vos ambtions.</p>
+
+          </article>
+
+          <article class="card">
+
+            <h3 class="card__title">Maintenance et support</h3>
+
+            <p class="card__text">Même aprés la livraison nous vous accompagnons dans votre exprience numérique afin de vous garantir un support continu et une évolution constante.</p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <!-- Pied de page : copyright dynamique (#year) + liens inter-pages -->
+
+  <footer class="footer">
+
+    <div class="container footer__inner">
+
+      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+
+      <nav class="footer__nav" aria-label="Liens du pied de page">
+
+        <a href="index.html">Accueil</a>
+
+        <a href="services.html">Services</a>
+
+        <a href="projets.html">Nos projets</a>
+
+        <a href="apropos.html">À propos</a>
+
+        <a href="contact.html">Contact</a>
+
       </nav>
+
     </div>
+
   </footer>
 
+
+
   <!-- Interactions : menu mobile, année footer, formulaire -->
+
   <script src="js/main.js"></script>
+
 </body>
+
 </html>
+

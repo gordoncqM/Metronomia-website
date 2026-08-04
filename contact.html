@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+  Page Contact — Metronomia
+  Charte : Tech Neumorphisme (css/style.css partagé)
+  Convention BEM : bloc__élément--modificateur
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Metronomia — une question, un devis ou un projet en tête.">
+  <title>Contact — Tech Neumorphisme — Metronomia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="projets.html" class="nav__link">Nos projets</a></li>
+          <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="contact-hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Contact</h1>
+        <p class="hero__subtitle">
+          Une question, un devis ou un projet en tête ? Écrivez-nous,
+          nous vous répondrons rapidement.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Envoyez-nous un message</h2>
+          <p class="section__intro">
+            Remplissez le formulaire ci-dessous et nous reviendrons vers vous dans les plus brefs délais.
+          </p>
+        </header>
+
+        <form class="form" id="contact-form" novalidate>
+          <div class="form__group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form__group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form__group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Envoyer</button>
+          <p class="form__feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+      <nav class="footer__nav" aria-label="Liens du pied de page">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="projets.html">Nos projets</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
