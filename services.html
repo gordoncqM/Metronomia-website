@@ -23,18 +23,19 @@
     <div class="container header__inner">
       <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle__checkbox" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
         <span></span>
         <span></span>
         <span></span>
-      </button>
+      </label>
 
-      <nav class="nav" id="nav" aria-label="Navigation principale">
+      <nav class="nav" aria-label="Navigation principale">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Accueil</a></li>
           <li><a href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a></li>
           <li><a href="projets.html" class="nav__link">Nos projets</a></li>
-          <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+          <li><a href="apropos.html" class="nav__link">À propos</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
@@ -161,17 +162,16 @@
   <!-- Pied de page : liens inter-pages -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">&copy; <span id="year"></span> — Tous droits réservés</p>
+      <p class="footer__copy">&copy; 2026 — Tous droits réservés</p>
       <nav class="footer__nav" aria-label="Liens du pied de page">
         <a href="index.html">Accueil</a>
         <a href="services.html">Services</a>
         <a href="projets.html">Nos projets</a>
-        <a href="index.html#apropos">À propos</a>
+        <a href="apropos.html">À propos</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>

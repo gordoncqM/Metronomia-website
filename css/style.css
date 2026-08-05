@@ -882,6 +882,7 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
   margin: 40px 0;
 }
 
+<<<<<<< HEAD
 
 /* Style des cartes (cubes) */
 .card,
@@ -1059,3 +1060,5 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
     font-size: 14px;
   }
 }
+=======
+>>>>>>> 4feec6d036502cacce7c7711fc186b3c0594a9a5
