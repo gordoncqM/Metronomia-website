@@ -38,64 +38,59 @@
   </header>
 
   <main>
-        <!-- Section Hero (optionnelle) -->
-        <section class="section section--hero">
-          <div class="container">
-            <h1 class="section__title">À propos de Metronomia</h1>
-            <p class="section__intro">
-              Nous sommes une entreprise innovante spécialisée dans [domaine d'activité, ex: "les solutions technologiques sur mesure"].
-              Notre mission : [résumer la mission en une phrase percutante].
+    <!-- Section Hero (optionnelle) -->
+    <section class="section section--hero">
+      <div class="container">
+        <h1 class="section__title">À propos de Metronomia</h1>
+        <p class="section__intro">
+          Nous sommes une entreprise innovante spécialisée dans [domaine d'activité].
+          Notre mission : [résumer la mission en une phrase percutante].
+        </p>
+      </div>
+    </section>
+  
+    <!-- 4 petites cases de navigation -->
+    <section class="quick-nav">
+      <div class="container">
+        <div class="quick-nav__grid">
+          <a href="#histoire" class="quick-nav__tag quick-nav__tag--light">Notre histoire</a>
+          <a href="#equipe" class="quick-nav__tag quick-nav__tag--light">Notre équipe</a>
+          <a href="#valeurs" class="quick-nav__tag quick-nav__tag--light">Nos valeurs</a>
+          <a href="#temoinages" class="quick-nav__tag quick-nav__tag--gradient">Ce que disent nos clients</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Section Histoire (fond bleu clair) -->
+    <section class="section section--light" id="histoire">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Notre histoire</h2>
+          <p class="section__subtitle">
+            Fondée en 2026, Metronomia est née de la volonté de révolutionner [ton domaine].
+          </p>
+        </header>
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-card__date">2026</div>
+            <h3 class="timeline-card__title">Création de Metronomia</h3>
+            <p class="timeline-card__text">
+              L'entreprise a été fondée par Philippe Le Mounier avec pour objectif de [objectif initial].
             </p>
-          </div>
-        </section>
-<!-- 4 étiquettes avec style personnalisé -->
-<section class="quick-nav">
-  <div class="container">
-    <div class="quick-nav__grid">
-      <a href="#histoire" class="quick-nav__tag quick-nav__tag--light">Notre histoire</a>
-      <a href="#equipe" class="quick-nav__tag quick-nav__tag--light">Notre équipe</a>
-      <a href="#valeurs" class="quick-nav__tag quick-nav__tag--light">Nos valeurs</a>
-      <a href="#temoinages" class="quick-nav__tag quick-nav__tag--gradient">Ce que disent nos clients</a>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Section Histoire -->
-<section class="section" id="histoire">
-  <div class="container">
-    <header class="section__header">
-      <h2 class="section__title">Notre histoire</h2>
-      <p class="section__subtitle">
-        Fondée en 2026, Metronomia est née de la volonté de révolutionner [ton domaine].
-      </p>
-    </header>
-
-    <!-- Timeline avec 2 cubes professionnels -->
-    <div class="timeline">
-      <!-- Cube 1 : Création de Metronomia (2026) -->
-      <article class="timeline-card">
-        <div class="timeline-card__date">2026</div>
-        <h3 class="timeline-card__title">Création de Metronomia</h3>
-        <p class="timeline-card__text">
-          L'entreprise a été fondée par Philippe Le Mounier avec pour objectif de [objectif initial].
-        </p>
-      </article>
-
-      <!-- Cube 2 : Première innovation (2027) -->
-      <article class="timeline-card">
-        <div class="timeline-card__date">2027</div>
-        <h3 class="timeline-card__title">Première innovation</h3>
-        <p class="timeline-card__text">
-          Lancement de [nom du premier produit/service], qui a marqué un tournant dans [secteur].
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-    <section class="section" id="equipe">
+          </article>
+          <article class="timeline-card">
+            <div class="timeline-card__date">2027</div>
+            <h3 class="timeline-card__title">Première innovation</h3>
+            <p class="timeline-card__text">
+              Lancement de [nom du premier produit/service], qui a marqué un tournant dans [secteur].
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Section Équipe (fond blanc) -->
+    <section class="section section--white" id="equipe">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title">Notre équipe</h2>
@@ -104,50 +99,68 @@
         <div class="cards">
           <article class="card">
             <h3 class="card__title">Philippe Le Mounier</h3>
-            <p class="card__text">Fondateur &amp; CEO — 10 ans d'expérience dans le développement de solutions technologiques.</p>
+            <p class="card__text">Fondateur & CEO — 10 ans d'expérience dans le développement de solutions technologiques.</p>
           </article>
         </div>
       </div>
     </section>
+  
+<!-- Section Valeurs (fond blanc) -->
+<section class="section section--light" id="valeurs">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="section__title">Nos valeurs</h2>
+      <div class="section__divider"></div>
+    </header>
+    <div class="cards">
+      <!-- Carte 1 : Innovation -->
+      <article class="value-card"> <!-- Utilise value-card ici -->
+        <div class="card__icon"></div>
+        <h3 class="card__title">Innovation</h3>
+        <p class="card__text">Nous repoussons les limites pour offrir des solutions uniques.</p>
+      </article>
 
-    <section class="section section--alt" id="valeurs">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Nos valeurs</h2>
-        </header>
-        <div class="cards">
-          <article class="card">
-            <h3 class="card__title">Innovation</h3>
-            <p class="card__text">Nous repoussons les limites pour offrir des solutions uniques.</p>
-          </article>
-          <article class="card">
-            <h3 class="card__title">Collaboration</h3>
-            <p class="card__text">Travailler ensemble pour atteindre l'excellence.</p>
-          </article>
-          <article class="card">
-            <h3 class="card__title">Transparence</h3>
-            <p class="card__text">Une communication claire et honnête avec nos clients.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <!-- Carte 2 : Collaboration -->
+      <article class="value-card"> <!-- Utilise value-card ici -->
+        <div class="card__icon"></div>
+        <h3 class="card__title">Collaboration</h3>
+        <p class="card__text">Travailler ensemble pour atteindre l'excellence.</p>
+      </article>
 
-    <section class="section" id="temoinages">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Ce que disent nos clients</h2>
-        </header>
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <blockquote class="testimonial-card__quote">
-              "Metronomia a transformé notre façon de travailler. Leurs solutions sont à la fois puissantes et intuitives."
-            </blockquote>
-            <p class="testimonial-card__author">— [Nom du clients],[Entreprise]
-          </article>
-        </div>
-      </div>
-    </section>
-
+      <!-- Carte 3 : Transparence -->
+      <article class="value-card"> <!-- Utilise value-card ici -->
+        <div class="card__icon"></div>
+        <h3 class="card__title">Transparence</h3>
+        <p class="card__text">Une communication claire et honnête avec nos clients.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- Section Témoignages (fond blanc) -->
+<section class="section section--white" id="temoinages">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="section__title">Ce que disent nos clients</h2>
+    </header>
+    <div class="testimonials-grid">
+      <!-- Témoignage 1 -->
+      <article class="testimonial-card testimonial-card--bordered">
+        <blockquote class="testimonial-card__quote">
+          "Metronomia a transformé notre façon de travailler. Leurs solutions sont à la fois puissantes et intuitives."
+        </blockquote>
+        <p class="testimonial-card__author">— [Nom du client], [Entreprise]</p>
+      </article>
+    </div>
+      <!-- Témoignage 2 (si besoin) -->
+      <article class="testimonial-card testimonial-card--bordered">
+        <blockquote class="testimonial-card__quote">
+          "Un service exceptionnel et une équipe réactive."
+        </blockquote>
+        <p class="testimonial-card__author">— [Nom du client], [Entreprise]</p>
+      </article>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer class="footer">
