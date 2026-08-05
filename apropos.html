@@ -27,9 +27,10 @@
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <ul class="nav__list">
           <li><a href="index.html#accueil" class="nav__link">Accueil</a></li>
-          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="projets.html" class="nav__link nav__link--cta">Nos projets</a></li>
           <li><a href="apropos.html" class="nav__link nav__link--active">À propos</a></li>
-          <li><a href="index.html#contact" class="nav__link nav__link--cta">Contact</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -37,44 +38,62 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Section Hero (optionnelle) -->
-    <section class="section section--hero">
-      <div class="container">
-        <h1 class="section__title">À propos de Metronomia</h1>
-        <p class="section__intro">
-          Nous sommes une entreprise innovante spécialisée dans [domaine d'activité, ex: "les solutions technologiques sur mesure"].
-          Notre mission : [résumer la mission en une phrase percutante].
-        </p>
-      </div>
-    </section>
+        <!-- Section Hero (optionnelle) -->
+        <section class="section section--hero">
+          <div class="container">
+            <h1 class="section__title">À propos de Metronomia</h1>
+            <p class="section__intro">
+              Nous sommes une entreprise innovante spécialisée dans [domaine d'activité, ex: "les solutions technologiques sur mesure"].
+              Notre mission : [résumer la mission en une phrase percutante].
+            </p>
+          </div>
+        </section>
+<!-- 4 étiquettes avec style personnalisé -->
+<section class="quick-nav">
+  <div class="container">
+    <div class="quick-nav__grid">
+      <a href="#histoire" class="quick-nav__tag quick-nav__tag--light">Notre histoire</a>
+      <a href="#equipe" class="quick-nav__tag quick-nav__tag--light">Notre équipe</a>
+      <a href="#valeurs" class="quick-nav__tag quick-nav__tag--light">Nos valeurs</a>
+      <a href="#temoinages" class="quick-nav__tag quick-nav__tag--gradient">Ce que disent nos clients</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- Section Histoire -->
-    <section class="section" id="histoire">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Notre histoire</h2>
-          <p class="section__subtitle">
-            Fondée en 2026, Metronomia est née de la volonté de [expliquer brièvement l'origine].
-          </p>
-        </header>
-        <div class="timeline">
-          <div class="timeline__item">
-            <div class="timeline__date">2026</div>
-            <div class="timeline__content">
-              <h3>Création de Metronomia</h3>
-              <p>L'entreprise a été fondée par Philippe Le Mounier avec pour objectif de [objectif initial].</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__date">2027</div>
-            <div class="timeline__content">
-              <h3>Première innovation</h3>
-              <p>Lancement de [nom du premier produit/service], qui a marqué un tournant dans [secteur].</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="section" id="histoire">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="section__title">Notre histoire</h2>
+      <p class="section__subtitle">
+        Fondée en 2026, Metronomia est née de la volonté de révolutionner [ton domaine].
+      </p>
+    </header>
+
+    <!-- Timeline avec 2 cubes professionnels -->
+    <div class="timeline">
+      <!-- Cube 1 : Création de Metronomia (2026) -->
+      <article class="timeline-card">
+        <div class="timeline-card__date">2026</div>
+        <h3 class="timeline-card__title">Création de Metronomia</h3>
+        <p class="timeline-card__text">
+          L'entreprise a été fondée par Philippe Le Mounier avec pour objectif de [objectif initial].
+        </p>
+      </article>
+
+      <!-- Cube 2 : Première innovation (2027) -->
+      <article class="timeline-card">
+        <div class="timeline-card__date">2027</div>
+        <h3 class="timeline-card__title">Première innovation</h3>
+        <p class="timeline-card__text">
+          Lancement de [nom du premier produit/service], qui a marqué un tournant dans [secteur].
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
 
     <!-- Section Équipe -->
     <section class="section" id="equipe">
@@ -129,7 +148,7 @@
             <blockquote class="testimonial-card__quote">
               "Metronomia a transformé notre façon de travailler. Leurs solutions sont à la fois puissantes et intuitives."
             </blockquote>
-            <p class="testimonial-card__author">— Jean Dupont, [Entreprise]</p>
+            <p class="testimonial-card__author">— [Nom du clients],[Entreprise]
           </article>
           <!-- Ajoute d'autres témoignages ici -->
         </div>
