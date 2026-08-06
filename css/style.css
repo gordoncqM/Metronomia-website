@@ -74,6 +74,9 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -83,8 +86,15 @@ body {
   color: var(--color-text);
   background-color: rgba(212, 217, 236, 0.92);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+main {
+  flex: 1;
 }
 
 img {
@@ -833,20 +843,20 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
     background-color: rgba(21, 37, 53, 0.35);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    transform: translateX(100%);
+    overflow: hidden;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition:
-      transform 0.3s ease,
       opacity 0.3s ease,
       visibility 0.3s ease;
     box-shadow: none;
   }
 
   .nav-toggle__checkbox:checked ~ .nav {
-    transform: translateX(0);
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .nav__list {
@@ -859,6 +869,12 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-neu-raised);
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-toggle__checkbox:checked ~ .nav .nav__list {
+    transform: translateX(0);
   }
 
   .nav__list li {
@@ -921,6 +937,21 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 
   .form {
     padding: var(--space-md);
+  }
+
+  .hero__subtitle-no-break {
+    white-space: normal;
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .timeline-card {
+    width: 100%;
+    max-width: 300px;
   }
 }
 /* Espacement entre les cartes (cubes) */
@@ -1025,7 +1056,8 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
   background:rgba(197, 216, 239, 0.92);
   border-radius: 16px; /* Bordures arrondies pour un look moderne */
   padding: 24px;
-  width: 300px; /* Largeur fixe pour les cubes */
+  width: 100%;
+  max-width: 300px; /* Largeur max des cubes — 100% sur mobile */
   box-shadow:
     8px 8px 20px rgba(0, 0, 0, 0.08),
     -8px -8px 20px rgb(255, 255, 255);
