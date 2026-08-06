@@ -69,7 +69,7 @@
   --max-width: 72rem;
 
   --transition: 0.25s ease;
-  --page-transition: 0.08s ease-out;
+  --page-transition: 0.08s ease-out; /* Durée du fondu du calque inter-pages */
 }
 
 html {

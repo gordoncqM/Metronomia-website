@@ -10,6 +10,7 @@
   <meta charset="UTF-8">
   <meta name="theme-color" content="#d4d9ec">
   <meta name="color-scheme" content="light">
+  <!-- Bootstrap pré-rendu : langue i18n + calque de transition inter-pages -->
   <script>
     (function () {
       var supported = ['fr', 'en', 'it'];
@@ -17,12 +18,15 @@
       var nav = (navigator.language || 'fr').split('-')[0];
       var lang = stored || nav;
       if (supported.indexOf(lang) === -1) lang = 'fr';
+      // Masque le texte FR si la langue active n'est pas le français
       if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
+      // Calque bleu à l'entrée après une navigation interne
       if (sessionStorage.getItem('metronomia-page-enter') === '1') {
         document.documentElement.classList.add('page-transition-enter');
       }
     })();
   </script>
+  <!-- CSS critique inline (fond, i18n, transitions — évite le flash blanc) -->
   <style>
     html,body{background-color:#d4d9ec;color:#152535}
     html::after{content:'';position:fixed;inset:0;background:#d4d9ec;z-index:99999;opacity:0;pointer-events:none;transition:opacity .08s ease-out}
@@ -207,6 +211,7 @@
   </footer>
 
 
+  <!-- Transitions de page + internationalisation (i18next) -->
   <script src="js/page-transition.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
@@ -218,8 +223,8 @@
       .use(i18nextBrowserLanguageDetector)
       .init({
         fallbackLng: 'fr',
-        supportedLngs: ['fr', 'en', 'it'],
-        load: 'languageOnly',
+        supportedLngs: ['fr', 'en', 'it'], // Langues disponibles sur le site
+        load: 'languageOnly', // fr-FR → fr (évite les 404 Locales/fr-FR/)
         backend: {
           loadPath: 'Locales/{{lng}}/translation.json',
         },
@@ -234,7 +239,7 @@
       }, (err, t) => {
         if (err) {
           console.error("Erreur i18next :", err);
-          document.documentElement.classList.remove('i18n-loading');
+          document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
           return;
         }
         // Met à jour le contenu une fois i18next prêt
@@ -247,8 +252,8 @@
         const key = el.getAttribute('data-i18n');
         el.innerHTML = i18next.t(key); // Utilise innerHTML pour gérer les balises HTML
       });
-      document.documentElement.classList.remove('i18n-loading');
-      document.documentElement.lang = i18next.language;
+      document.documentElement.classList.remove('i18n-loading'); // Affiche les textes traduits
+      document.documentElement.lang = i18next.language; // Met à jour l'attribut lang du document
     }
   
     // Gère le sélecteur de langue
@@ -270,11 +275,11 @@
           option.addEventListener('click', (e) => {
             e.stopPropagation();
             const lang = option.getAttribute('data-lang');
-            document.documentElement.classList.add('i18n-loading');
+            document.documentElement.classList.add('i18n-loading'); // Masque le flash FR pendant le chargement
             i18next.changeLanguage(lang, (err, t) => {
               if (err) {
                 console.error("Erreur de changement de langue :", err);
-                document.documentElement.classList.remove('i18n-loading');
+                document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
                 return;
               }
               updateContent();
