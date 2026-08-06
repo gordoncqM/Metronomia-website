@@ -7,6 +7,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      var supported = ['fr', 'en', 'it'];
+      var stored = localStorage.getItem('i18nextLng');
+      var nav = (navigator.language || 'fr').split('-')[0];
+      var lang = stored || nav;
+      if (supported.indexOf(lang) === -1) lang = 'fr';
+      if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
+    })();
+  </script>
+  <style>html.i18n-loading [data-i18n]{visibility:hidden}</style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contactez Metronomia — une question, un devis ou un projet en tête.">
   <title>Contact — Metronomia</title>
@@ -134,6 +145,7 @@
     }, (err, t) => {
       if (err) {
         console.error("Erreur i18next :", err);
+        document.documentElement.classList.remove('i18n-loading');
         return;
       }
       // Met à jour le contenu une fois i18next prêt
@@ -146,6 +158,8 @@
       const key = el.getAttribute('data-i18n');
       el.innerHTML = i18next.t(key); // Utilise innerHTML pour gérer les balises HTML
     });
+    document.documentElement.classList.remove('i18n-loading');
+    document.documentElement.lang = i18next.language;
   }
 
   // Gère le sélecteur de langue
@@ -179,9 +193,11 @@
         option.addEventListener('click', (e) => {
           e.stopPropagation();
           const lang = option.getAttribute('data-lang');
+          document.documentElement.classList.add('i18n-loading');
           i18next.changeLanguage(lang, (err, t) => {
             if (err) {
               console.error("Erreur de changement de langue :", err);
+              document.documentElement.classList.remove('i18n-loading');
               return;
             }
             updateContent();

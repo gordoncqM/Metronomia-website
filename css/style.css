@@ -1261,6 +1261,11 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 
 
 
+/* Masque le texte FR le temps du chargement i18next (langue ≠ fr) */
+html.i18n-loading [data-i18n] {
+  visibility: hidden;
+}
+
 /* Style du sélecteur de langue */
 .language-selector {
   position: relative;
