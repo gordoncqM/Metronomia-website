@@ -16,7 +16,10 @@
       if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
     })();
   </script>
-  <style>html.i18n-loading [data-i18n]{visibility:hidden}</style>
+  <style>
+    html,body{background-color:#d4d9ec;color:#152535}
+    html.i18n-loading [data-i18n]{visibility:hidden}
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez Metronomia : notre histoire, notre équipe et nos valeurs.">
   <title>À propos — Metronomia</title>
@@ -24,9 +27,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
 </head>
 <body>
 
@@ -191,6 +191,9 @@
       </nav>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
   <script>
     // Initialise i18next
     i18next
