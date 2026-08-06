@@ -383,6 +383,10 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
   color: var(--color-primary-dark);
 }
 
+.hero__subtitle-no-break {
+  white-space: nowrap;
+}
+
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -1039,7 +1043,7 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 /* Style de la date (en bleu professionnel) */
 .timeline-card__date {
   font-weight: 700;
-  color: #2a7fff; /* Bleu professionnel */
+  color: #1f5ebd; /* Bleu professionnel */
   font-size: 14px;
   margin-bottom: 12px;
   display: block;
@@ -1048,7 +1052,7 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 /* Style du titre (noir foncé pour un contraste professionnel) */
 .timeline-card__title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 800;
   color: #1a1a1a;
   margin-bottom: 12px;
 }
@@ -1092,7 +1096,7 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 /* Style pour les 3 premières étiquettes (fond blanc, texte bleu) */
 .quick-nav__tag--light {
   background: rgba(197, 216, 239, 0.92);
-  color: #2a7fff;
+  color: #1c57af;
 }
 
 /* Style pour la dernière étiquette (dégradé bleu foncé → bleu clair) */
@@ -1222,6 +1226,103 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 .testimonial-card--bordered:hover {
   transform: translateY(-3px);
   box-shadow:
-  12px 12px 25px rgba(0, 0, 0, 0.12),
-  
+    12px 12px 25px rgba(0, 0, 0, 0.12),
+    -12px -12px 25px rgb(255, 255, 255);
+}
+/* Style du message temporaire */
+.testimonial-card--placeholder {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(200, 200, 255, 0.2);
+  text-align: center; /* Centre le texte */
+}
+
+.testimonial-card__message {
+  color: #4a4a4a;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.testimonial-card__message strong {
+  color: #0066cc; /* Bleu pour mettre en valeur */
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Style du sélecteur de langue */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-btn {
+  background: white;
+  border: 1px solid #0066cc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0066cc;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-btn:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+/* Style du menu déroulant (masqué par défaut) */
+.language-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #0066cc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.language-menu.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Style des options de langue */
+.lang-option {
+  width: 100%;
+  padding: 8px 12px;
+  background: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.lang-option:hover {
+  background: #f0f4ff;
 }
