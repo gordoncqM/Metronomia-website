@@ -24,14 +24,7 @@ Site vitrine/
 
 ## Lancer le site en local
 
-Ouvrir `index.html` directement dans un navigateur, ou utiliser un serveur local :
-
-```bash
-# Avec Python (si installé)
-python -m http.server 8000
-```
-
-Puis ouvrir : [http://localhost:8000](http://localhost:8000)
+Ouvrir `index.html` directement dans un navigateur (double-clic ou glisser-déposer du fichier). Aucune installation ni serveur n'est nécessaire : le site est entièrement statique (HTML/CSS).
 
 ---
 
