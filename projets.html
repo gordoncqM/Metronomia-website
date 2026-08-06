@@ -14,12 +14,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
 </head>
 <body>
 
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Metronom<span class="logo__accent">ia</span></a>
+      <a href="index.html" class="logo">Metronom<span class="logo__accent" data-i18n="logo_ia">ia</span></a>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle__checkbox" aria-hidden="true">
       <label for="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
@@ -30,12 +33,22 @@
 
       <nav class="nav" aria-label="Navigation principale">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link">Accueil</a></li>
-          <li><a href="services.html" class="nav__link">Services</a></li>
-          <li><a href="projets.html" class="nav__link nav__link--active" aria-current="page">Nos projets</a></li>
-          <li><a href="apropos.html" class="nav__link">À propos</a></li>
-          <li><a href="contact.html" class="nav__link">Contact</a></li>
+          <li><a href="index.html" class="nav__link" data-i18n="nav_home">Accueil</a></li>
+          <li><a href="services.html" class="nav__link" data-i18n="nav_services">Services</a></li>
+          <li><a href="projets.html" class="nav__link nav__link--active" aria-current="page" data-i18n="nav_projets">Nos projets</a></li>
+          <li><a href="apropos.html" class="nav__link" data-i18n="nav_apropos">À propos</a></li>
+          <li><a href="contact.html" class="nav__link" data-i18n="nav_contact">Contact</a></li>
+          <!-- Sélecteur de langue (à inclure dans chaque page) -->
+          <div class="language-selector">
+            <button id="language-btn" class="language-btn" data-i18n="language_btn">🌍 Langue</button>
+            <div id="language-menu" class="language-menu">
+              <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+              <button class="lang-option" data-lang="en">🇬🇧 English</button>
+              <button class="lang-option" data-lang="it">🇮🇹 Italiano</button>
+            </div>
+          </div>
         </ul>
+
       </nav>
     </div>
   </header>
@@ -44,16 +57,16 @@
 
     <section class="hero" id="projets-hero">
       <div class="container hero__inner">
-        <h1 class="hero__title">Nos projets</h1>
-        <p class="hero__subtitle">
+        <h1 class="hero__title" data-i18n="projets_hero_title">Nos projets</h1>
+        <p class="hero__subtitle" data-i18n="projets_hero_subtitle">
           Un aperçu de nos réalisations, classées par domaine d'activité.
           Chaque projet reflète notre engagement envers la qualité et l'accompagnement sur mesure.
         </p>
         <div class="hero__actions">
-          <a href="#sites-vitrines" class="btn btn--secondary">Sites vitrines</a>
-          <a href="#identite-visuelle" class="btn btn--secondary">Identité visuelle</a>
-          <a href="#seo-performance" class="btn btn--secondary">SEO & performance</a>
-          <a href="contact.html" class="btn btn--primary">Discuter d'un projet</a>
+          <a href="#sites-vitrines" class="btn btn--secondary" data-i18n="projets_hero_link_vitrines">Sites vitrines</a>
+          <a href="#identite-visuelle" class="btn btn--secondary" data-i18n="projets_hero_link_identite">Identité visuelle</a>
+          <a href="#seo-performance" class="btn btn--secondary" data-i18n="projets_hero_link_seo">SEO & performance</a>
+          <a href="contact.html" class="btn btn--primary" data-i18n="projets_hero_link_contact">Discuter d'un projet</a>
         </div>
       </div>
     </section>
@@ -62,8 +75,8 @@
     <section class="section" id="sites-vitrines">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title">Sites vitrines</h2>
-          <p class="section__intro">
+          <h2 class="section__title" data-i18n="projets_vitrines_title">Sites vitrines</h2>
+          <p class="section__intro" data-i18n="projets_vitrines_intro">
             Des sites web modernes, accessibles et adaptés à tous les écrans pour valoriser votre activité en ligne.
           </p>
         </header>
@@ -72,12 +85,12 @@
           <article class="project-card">
             <div class="project-card__media">
               <!-- Remplacer le placeholder par : <img src="assets/images/projet-artisan.jpg" alt="Site vitrine Artisan du bâtiment" class="project-card__image"> -->
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">HTML / CSS</span>
-              <h3 class="project-card__title">Artisan du bâtiment</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_vitrines_1_tag">HTML / CSS</span>
+              <h3 class="project-card__title" data-i18n="projets_vitrines_1_title">Artisan du bâtiment</h3>
+              <p class="project-card__text" data-i18n="projets_vitrines_1_text">
                 Site vitrine responsive pour une entreprise artisanale : présentation des services,
                 galerie de réalisations et formulaire de contact.
               </p>
@@ -86,12 +99,12 @@
 
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">Responsive</span>
-              <h3 class="project-card__title">Cabinet de conseil</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_vitrines_2_tag">Responsive</span>
+              <h3 class="project-card__title" data-i18n="projets_vitrines_2_title">Cabinet de conseil</h3>
+              <p class="project-card__text" data-i18n="projets_vitrines_2_text">
                 Refonte complète d'un site institutionnel avec navigation claire,
                 pages de services détaillées et charte graphique cohérente.
               </p>
@@ -100,9 +113,9 @@
 
           <article class="project-card">
             <div class="project-card__body">
-              <span class="project-card__tag">Landing page</span>
-              <h3 class="project-card__title">Lancement produit</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_vitrines_3_tag">Landing page</span>
+              <h3 class="project-card__title" data-i18n="projets_vitrines_3_title">Lancement produit</h3>
+              <p class="project-card__text" data-i18n="projets_vitrines_3_text">
                 Page d'atterrissage optimisée pour une campagne marketing,
                 avec appels à l'action ciblés et suivi des conversions.
               </p>
@@ -116,8 +129,8 @@
     <section class="section section--alt" id="identite-visuelle">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title">Identité visuelle</h2>
-          <p class="section__intro">
+          <h2 class="section__title" data-i18n="projets_identite_title">Identité visuelle</h2>
+          <p class="section__intro" data-i18n="projets_identite_intro">
             Chartes graphiques, logos et univers visuels pensés pour renforcer l'image de marque de nos clients.
           </p>
         </header>
@@ -125,12 +138,12 @@
         <div class="project-cards">
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">Charte graphique</span>
-              <h3 class="project-card__title">Startup tech</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_identite_1_tag">Charte graphique</span>
+              <h3 class="project-card__title" data-i18n="projets_identite_1_title">Startup tech</h3>
+              <p class="project-card__text" data-i18n="projets_identite_1_text">
                 Création d'une identité visuelle complète : logo, palette de couleurs,
                 typographies et déclinaisons pour le web et les supports print.
               </p>
@@ -139,12 +152,12 @@
 
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">UI Design</span>
-              <h3 class="project-card__title">Application mobile</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_identite_2_tag">UI Design</span>
+              <h3 class="project-card__title" data-i18n="projets_identite_2_title">Application mobile</h3>
+              <p class="project-card__text" data-i18n="projets_identite_2_text">
                 Conception de l'interface utilisateur et des composants UI
                 pour une application mobile orientée productivité.
               </p>
@@ -153,9 +166,9 @@
 
           <article class="project-card">
             <div class="project-card__body">
-              <span class="project-card__tag">Rebranding</span>
-              <h3 class="project-card__title">Association locale</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_identite_3_tag">Rebranding</span>
+              <h3 class="project-card__title" data-i18n="projets_identite_3_title">Association locale</h3>
+              <p class="project-card__text" data-i18n="projets_identite_3_text">
                 Modernisation de l'identité visuelle d'une association :
                 nouveau logo, guidelines et déploiement sur le site existant.
               </p>
@@ -169,8 +182,8 @@
     <section class="section" id="seo-performance">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title">SEO & performance</h2>
-          <p class="section__intro">
+          <h2 class="section__title" data-i18n="projets_seo_title">SEO & performance</h2>
+          <p class="section__intro" data-i18n="projets_seo_intro">
             Optimisations techniques et éditoriales pour améliorer la visibilité et l'expérience utilisateur.
           </p>
         </header>
@@ -178,12 +191,12 @@
         <div class="project-cards">
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">Audit SEO</span>
-              <h3 class="project-card__title">E-commerce local</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_seo_1_tag">Audit SEO</span>
+              <h3 class="project-card__title" data-i18n="projets_seo_1_title">E-commerce local</h3>
+              <p class="project-card__text" data-i18n="projets_seo_1_text">
                 Audit complet du référencement naturel, correction des balises meta,
                 amélioration de la structure et du maillage interne.
               </p>
@@ -192,9 +205,9 @@
 
           <article class="project-card">
             <div class="project-card__body">
-              <span class="project-card__tag">Core Web Vitals</span>
-              <h3 class="project-card__title">Optimisation vitesse</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_seo_2_tag">Core Web Vitals</span>
+              <h3 class="project-card__title" data-i18n="projets_seo_2_title">Optimisation vitesse</h3>
+              <p class="project-card__text" data-i18n="projets_seo_2_text">
                 Réduction du temps de chargement de 40 % grâce à la compression d'images,
                 au lazy loading et à l'optimisation du CSS critique.
               </p>
@@ -203,12 +216,12 @@
 
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">Accessibilité</span>
-              <h3 class="project-card__title">Mise aux normes WCAG</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_seo_3_tag">Accessibilité</span>
+              <h3 class="project-card__title" data-i18n="projets_seo_3_title">Mise aux normes WCAG</h3>
+              <p class="project-card__text" data-i18n="projets_seo_3_text">
                 Audit et corrections d'accessibilité pour atteindre le niveau AA :
                 contrastes, navigation clavier et textes alternatifs.
               </p>
@@ -222,8 +235,8 @@
     <section class="section section--alt" id="maintenance">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title">Maintenance & support</h2>
-          <p class="section__intro">
+          <h2 class="section__title" data-i18n="projets_maintenance_title">Maintenance & support</h2>
+          <p class="section__intro" data-i18n="projets_maintenance_intro">
             Accompagnement continu pour garantir la fiabilité, la sécurité et l'évolution des outils digitaux.
           </p>
         </header>
@@ -231,9 +244,9 @@
         <div class="project-cards">
           <article class="project-card">
             <div class="project-card__body">
-              <span class="project-card__tag">Support</span>
-              <h3 class="project-card__title">Portail client</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_maintenance_1_tag">Support</span>
+              <h3 class="project-card__title" data-i18n="projets_maintenance_1_title">Portail client</h3>
+              <p class="project-card__text" data-i18n="projets_maintenance_1_text">
                 Mise en place d'un contrat de maintenance avec mises à jour mensuelles,
                 sauvegardes automatiques et assistance prioritaire.
               </p>
@@ -242,12 +255,12 @@
 
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">Migration</span>
-              <h3 class="project-card__title">Migration hébergeur</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_maintenance_2_tag">Migration</span>
+              <h3 class="project-card__title" data-i18n="projets_maintenance_2_title">Migration hébergeur</h3>
+              <p class="project-card__text" data-i18n="projets_maintenance_2_text">
                 Transfert sécurisé d'un site vers un nouvel hébergement avec zéro interruption
                 de service et configuration SSL renouvelée.
               </p>
@@ -256,12 +269,12 @@
 
           <article class="project-card">
             <div class="project-card__media">
-              <div class="project-card__placeholder" aria-hidden="true">Aperçu du projet</div>
+              <div class="project-card__placeholder" aria-hidden="true" data-i18n="projets_placeholder">Aperçu du projet</div>
             </div>
             <div class="project-card__body">
-              <span class="project-card__tag">Documentation</span>
-              <h3 class="project-card__title">Guide administrateur</h3>
-              <p class="project-card__text">
+              <span class="project-card__tag" data-i18n="projets_maintenance_3_tag">Documentation</span>
+              <h3 class="project-card__title" data-i18n="projets_maintenance_3_title">Guide administrateur</h3>
+              <p class="project-card__text" data-i18n="projets_maintenance_3_text">
                 Rédaction d'une documentation technique complète pour permettre
                 au client de gérer son site en autonomie.
               </p>
@@ -274,14 +287,14 @@
     <section class="section" id="cta-projets">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title">Votre projet, notre prochaine réalisation</h2>
-          <p class="section__intro">
+          <h2 class="section__title" data-i18n="projets_cta_title">Votre projet, notre prochaine réalisation</h2>
+          <p class="section__intro" data-i18n="projets_cta_intro">
             Vous avez un projet similaire ? Contactez-nous pour en discuter et obtenir un devis personnalisé.
           </p>
         </header>
         <div class="hero__actions hero__actions--center">
-          <a href="contact.html" class="btn btn--primary">Nous contacter</a>
-          <a href="services.html" class="btn btn--secondary">Voir nos services</a>
+          <a href="contact.html" class="btn btn--primary" data-i18n="projets_cta_contact">Nous contacter</a>
+          <a href="services.html" class="btn btn--secondary" data-i18n="projets_cta_services">Voir nos services</a>
         </div>
       </div>
     </section>
@@ -290,16 +303,84 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">&copy; 2026 — Tous droits réservés</p>
+      <p class="footer__copy" data-i18n="footer_copy">&copy; 2026 — Tous droits réservés</p>
       <nav class="footer__nav" aria-label="Liens du pied de page">
-        <a href="index.html">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="projets.html">Nos projets</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="nav_home">Accueil</a>
+        <a href="services.html" data-i18n="nav_services">Services</a>
+        <a href="projets.html" data-i18n="nav_projets">Nos projets</a>
+        <a href="apropos.html" data-i18n="nav_apropos">À propos</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
     </div>
   </footer>
 
+
+  <script>
+    // Initialise i18next
+    i18next
+      .use(i18nextHttpBackend)
+      .use(i18nextBrowserLanguageDetector)
+      .init({
+        fallbackLng: 'fr', // Langue par défaut
+        backend: {
+          loadPath: '/Locales/{{lng}}/translation.json', // Chemin vers tes fichiers JSON
+        },
+        detection: {
+          order: ['localStorage', 'navigator'], // Priorité à localStorage
+          caches: ['localStorage'], // Sauvegarde la langue dans localStorage
+        },
+        // Ajoute cette option pour éviter les conflits avec le HTML
+        interpolation: {
+          escapeValue: false, // Désactive l'échappement des balises HTML
+        },
+      }, (err, t) => {
+        if (err) {
+          console.error("Erreur i18next :", err);
+          return;
+        }
+        // Met à jour le contenu une fois i18next prêt
+        updateContent();
+      });
+  
+    // Fonction pour mettre à jour le contenu
+    function updateContent() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.innerHTML = i18next.t(key); // Utilise innerHTML pour gérer les balises HTML
+      });
+    }
+  
+    // Gère le sélecteur de langue
+    document.addEventListener('DOMContentLoaded', () => {
+      const languageBtn = document.getElementById('language-btn');
+      const languageMenu = document.getElementById('language-menu');
+  
+      if (languageBtn && languageMenu) {
+        languageBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          languageMenu.classList.toggle('show');
+        });
+  
+        document.addEventListener('click', () => {
+          languageMenu.classList.remove('show');
+        });
+  
+        document.querySelectorAll('.lang-option').forEach(option => {
+          option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const lang = option.getAttribute('data-lang');
+            i18next.changeLanguage(lang, (err, t) => {
+              if (err) {
+                console.error("Erreur de changement de langue :", err);
+                return;
+              }
+              updateContent();
+              languageMenu.classList.remove('show');
+            });
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

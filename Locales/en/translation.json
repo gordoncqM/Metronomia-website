@@ -1,0 +1,189 @@
+
+{
+    "logo": "Metronom",
+    "logo_ia": "ia",
+    "nav_home": "Home",
+    "nav_services": "Services",
+    "nav_projets": "Our Projects",
+    "nav_apropos": "About",
+    "nav_contact": "Contact",
+    "language_btn": "🌍 Language",
+  
+    "hero_title_ia": "IA",
+    "hero_subtitle": "The <strong class=\"hero__subtitle-highlight\">technology</strong> tailored to you, the <strong class=\"hero__subtitle-highlight\">expertise</strong> at your service.",
+    "hero_cta_contact": "Contact us",
+    "hero_cta_services": "Discover our services",
+  
+    "services_title": "Our Areas of Expertise",
+    "services_intro": "We cover all aspects of digital and IT projects to provide you with a complete and tailored solution.",
+    "services_fullstack_title": "Fullstack Development",
+    "services_fullstack_text": "We handle all web and mobile development projects to ensure a comprehensive solution.",
+    "services_support_title": "Client Support and Advice",
+    "services_support_text": "We work at the heart of your projects to provide you with the necessary tools to support you in your efforts.",
+    "services_maintenance_title": "Maintenance and Support",
+    "services_maintenance_text": "Even after delivery, we support you in your digital experience to guarantee continuous support and constant evolution.",
+  
+    "about_title": "About Metronomia",
+    "about_intro": "Tell your story, your values, and what sets you apart. This section is designed to inspire trust and encourage contact.",
+    "about_list_1": "Experience and Expertise",
+    "about_list_2": "Personalized Approach",
+    "about_list_3": "Quality Commitment",
+    "about_cta": "Learn more",
+    "about_placeholder": "Image or visual",
+  
+   
+    
+
+    
+      
+        
+        
+      
+        
+        "about_hero_title": "About Metronomia",
+        "about_hero_intro": "Metronomia is a startup specializing in the development of customized applications for data management, storage, and rendering. Our mission: To provide tailored applications to unlock the potential of data by simplifying its management, storage, and rendering, so that every organization or individual can make informed decisions without technical constraints.",
+      
+        
+        "about_quicknav_history": "Our History",
+        "about_quicknav_team": "Our Team",
+        "about_quicknav_values": "Our Values",
+        "about_quicknav_testimonials": "What Our Clients Say",
+      
+        
+        "about_history_title": "Our History",
+        "about_history_subtitle": "Founded in 2026, Metronomia was born from the desire to revolutionize [your field].",
+        "about_timeline_2026_date": "2026",
+        "about_timeline_2026_title": "Creation of Metronomia",
+        "about_timeline_2026_text": "The company was founded by Philippe Le Mounier with the goal of simplifying data management, storage, and access through customized and innovative applications.",
+        "about_timeline_2027_date": "2027",
+        "about_timeline_2027_title": "Our First Innovations",
+        "about_timeline_2027_text": "Our first innovations will be displayed here.",
+      
+        
+        "about_team_title": "Our Team",
+        "about_team_intro": "A passionate and expert team at your service.",
+        "about_team_philippe_name": "Philippe Le Mounier",
+        "about_team_philippe_desc": "Founder & CEO — Over 30 years of experience in decision-making IT.",
+      
+        
+        "about_values_title": "Our Values",
+        "about_values_innovation_title": "Innovation",
+        "about_values_innovation_text": "We push boundaries to deliver unique solutions.",
+        "about_values_collaboration_title": "Collaboration",
+        "about_values_collaboration_text": "Working together to achieve excellence.",
+        "about_values_transparency_title": "Transparency",
+        "about_values_transparency_text": "Clear and honest communication with our clients.",
+      
+      
+        "about_testimonials_title": "What Our Clients Say",
+        "about_testimonials_placeholder": "We have just launched Metronomia, and we are excited to collaborate with you.<br><br><strong>Your feedback will be displayed here soon.</strong>",
+      
+        
+        "footer_copy": "© 2026 — All rights reserved",
+    "projets_hero_title": "Our projects",
+    "projets_hero_subtitle": "A look at our work, organized by area of expertise. Each project reflects our commitment to quality and tailored support.",
+    "projets_hero_link_vitrines": "Showcase websites",
+    "projets_hero_link_identite": "Visual identity",
+    "projets_hero_link_seo": "SEO & performance",
+    "projets_hero_link_contact": "Discuss a project",
+
+    "projets_vitrines_title": "Showcase websites",
+    "projets_vitrines_intro": "Modern, accessible websites adapted to every screen to showcase your business online.",
+    "projets_placeholder": "Project preview",
+    "projets_vitrines_1_tag": "HTML / CSS",
+    "projets_vitrines_1_title": "Building contractor",
+    "projets_vitrines_1_text": "Responsive showcase website for a craft business: service presentation, project gallery and contact form.",
+    "projets_vitrines_2_tag": "Responsive",
+    "projets_vitrines_2_title": "Consulting firm",
+    "projets_vitrines_2_text": "Full redesign of an institutional website with clear navigation, detailed service pages and a consistent visual identity.",
+    "projets_vitrines_3_tag": "Landing page",
+    "projets_vitrines_3_title": "Product launch",
+    "projets_vitrines_3_text": "Landing page optimized for a marketing campaign, with targeted calls to action and conversion tracking.",
+
+    "projets_identite_title": "Visual identity",
+    "projets_identite_intro": "Brand guidelines, logos and visual universes designed to strengthen our clients' brand image.",
+    "projets_identite_1_tag": "Brand guidelines",
+    "projets_identite_1_title": "Tech startup",
+    "projets_identite_1_text": "Creation of a complete visual identity: logo, color palette, typography and variations for web and print media.",
+    "projets_identite_2_tag": "UI Design",
+    "projets_identite_2_title": "Mobile app",
+    "projets_identite_2_text": "Design of the user interface and UI components for a productivity-focused mobile app.",
+    "projets_identite_3_tag": "Rebranding",
+    "projets_identite_3_title": "Local association",
+    "projets_identite_3_text": "Modernization of an association's visual identity: new logo, guidelines and rollout on the existing website.",
+
+    "projets_seo_title": "SEO & performance",
+    "projets_seo_intro": "Technical and editorial optimizations to improve visibility and user experience.",
+    "projets_seo_1_tag": "SEO audit",
+    "projets_seo_1_title": "Local e-commerce",
+    "projets_seo_1_text": "Full SEO audit, meta tag corrections, improved structure and internal linking.",
+    "projets_seo_2_tag": "Core Web Vitals",
+    "projets_seo_2_title": "Speed optimization",
+    "projets_seo_2_text": "40% reduction in load time through image compression, lazy loading and critical CSS optimization.",
+    "projets_seo_3_tag": "Accessibility",
+    "projets_seo_3_title": "WCAG compliance",
+    "projets_seo_3_text": "Accessibility audit and fixes to reach AA level: contrast, keyboard navigation and alt text.",
+
+    "projets_maintenance_title": "Maintenance & support",
+    "projets_maintenance_intro": "Ongoing support to ensure the reliability, security and evolution of your digital tools.",
+    "projets_maintenance_1_tag": "Support",
+    "projets_maintenance_1_title": "Client portal",
+    "projets_maintenance_1_text": "Set-up of a maintenance contract with monthly updates, automatic backups and priority assistance.",
+    "projets_maintenance_2_tag": "Migration",
+    "projets_maintenance_2_title": "Hosting migration",
+    "projets_maintenance_2_text": "Secure transfer of a website to a new host with zero service interruption and renewed SSL configuration.",
+    "projets_maintenance_3_tag": "Documentation",
+    "projets_maintenance_3_title": "Admin guide",
+    "projets_maintenance_3_text": "Writing complete technical documentation so the client can manage their website independently.",
+
+    "projets_cta_title": "Your project, our next achievement",
+    "projets_cta_intro": "Have a similar project in mind? Get in touch to discuss it and get a tailored quote.",
+    "projets_cta_contact": "Contact us",
+    "projets_cta_services": "See our services",
+
+    "services_hero_title": "Our services",
+    "services_hero_subtitle": "Discover our full range of services. Each one is designed to meet your needs with rigor and personalized support.",
+    "services_hero_link_devis": "Request a quote",
+    "services_hero_link_offres": "View our services",
+    "services_hero_link_suivi": "Client support",
+
+    "services_offres_title": "Our areas of expertise",
+    "services_offres_intro": "Several areas of expertise to support you from design through to delivery.",
+    "services_offre_1_title": "Showcase website development",
+    "services_offre_1_text": "Design and development of modern, accessible websites adapted to every screen. A polished online presence that reflects your image.",
+    "services_offre_2_title": "Client support",
+    "services_offre_2_text": "Strategic support: audit, recommendations and roadmap to structure your digital project and reach your goals.",
+    "services_offre_3_title": "Maintenance and support",
+    "services_offre_3_text": "Maintenance, updates and ongoing support to ensure the performance, security and scalability of your tools over time.",
+    "services_offre_4_title": "Brand identity design",
+    "services_offre_4_text": "Custom visual identity and brand guidelines — from wireframe to CSS deployment, consistent with your brand.",
+    "services_offre_5_title": "SEO",
+    "services_offre_5_text": "Performance and SEO optimization to improve your visibility and your visitors' experience.",
+    "services_offre_6_title": "Technical documentation",
+    "services_offre_6_text": "Training and skills transfer so you can manage your website independently, with full confidence.",
+
+    "services_methode_title": "How we work with clients",
+    "services_methode_intro": "Our approach is based on listening, transparency and regular follow-up at every stage of your project.",
+    "services_methode_step_1": "Analysis of your needs and context",
+    "services_methode_step_2": "Tailored proposal and detailed quote",
+    "services_methode_step_3": "Iterative delivery with validation checkpoints",
+    "services_methode_step_4": "Delivery, training and post-project support",
+    "services_methode_visual": "Process illustration",
+
+    "services_cta_title": "Request our services",
+    "services_cta_intro": "Have a project in mind? Let's talk about it and build the solution that fits your ambitions together.",
+    "services_cta_contact": "Contact us",
+    "services_cta_retour": "Back to home",
+
+    "contact_hero_title": "Contact",
+    "contact_hero_subtitle": "A question, a quote request, or a project in mind? Write to us — we'll get back to you quickly.",
+    "contact_form_title": "Send us a message",
+    "contact_form_intro": "Fill in the form below — submitting it will open your mail client with the message pre-filled.",
+    "contact_form_label_name": "Name",
+    "contact_form_label_email": "Email",
+    "contact_form_label_message": "Message",
+    "contact_form_submit": "Send"
+
+    
+    
+  }

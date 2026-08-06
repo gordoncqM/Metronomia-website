@@ -160,11 +160,7 @@ git stash pop
 Lorsqu'un merge échoue avec `CONFLICT`, Git marque les fichiers concernés. Ouvrez-les et cherchez les marqueurs :
 
 ```
-<<<<<<< HEAD
 (votre version — branche actuelle)
-=======
-(version de la branche fusionnée)
->>>>>>> master
 ```
 
 | Commande | Description |
