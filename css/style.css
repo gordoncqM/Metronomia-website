@@ -69,6 +69,7 @@
   --max-width: 72rem;
 
   --transition: 0.25s ease;
+  --page-transition: 0.08s ease-out;
 }
 
 html {
@@ -1260,6 +1261,29 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 
 
 
+
+/* Transitions entre pages — calque bleu (évite le flash blanc du navigateur) */
+@media (prefers-reduced-motion: no-preference) {
+  html::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-color: #d4d9ec;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--page-transition);
+  }
+
+  html.page-transition-exit::after,
+  html.page-transition-enter::after {
+    opacity: 1;
+  }
+
+  html.page-transition-exit::after {
+    transition: none;
+  }
+}
 
 /* Masque le texte FR le temps du chargement i18next (langue ≠ fr) */
 html.i18n-loading [data-i18n] {

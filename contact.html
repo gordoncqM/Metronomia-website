@@ -7,6 +7,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#d4d9ec">
+  <meta name="color-scheme" content="light">
   <script>
     (function () {
       var supported = ['fr', 'en', 'it'];
@@ -15,10 +17,16 @@
       var lang = stored || nav;
       if (supported.indexOf(lang) === -1) lang = 'fr';
       if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
+      if (sessionStorage.getItem('metronomia-page-enter') === '1') {
+        document.documentElement.classList.add('page-transition-enter');
+      }
     })();
   </script>
   <style>
     html,body{background-color:#d4d9ec;color:#152535}
+    html::after{content:'';position:fixed;inset:0;background:#d4d9ec;z-index:99999;opacity:0;pointer-events:none;transition:opacity .08s ease-out}
+    html.page-transition-exit::after,html.page-transition-enter::after{opacity:1}
+    html.page-transition-exit::after{transition:none}
     html.i18n-loading [data-i18n]{visibility:hidden}
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,6 +130,7 @@
 
 
 
+<script src="js/page-transition.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
