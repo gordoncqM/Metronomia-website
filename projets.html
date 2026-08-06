@@ -322,7 +322,9 @@
       .use(i18nextHttpBackend)
       .use(i18nextBrowserLanguageDetector)
       .init({
-        fallbackLng: 'fr', // Langue par défaut
+        fallbackLng: 'fr',
+        supportedLngs: ['fr', 'en', 'it'],
+        load: 'languageOnly',
         backend: {
           loadPath: 'Locales/{{lng}}/translation.json',
         },
