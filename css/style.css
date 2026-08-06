@@ -812,31 +812,71 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
+    position: relative;
+    z-index: 102;
   }
 
   .nav {
     position: fixed;
-    inset: var(--header-height) 0 0 0;
-    background-color: var(--color-bg);
-    padding: var(--space-md);
+    inset: 0;
+    top: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: calc(var(--header-height) + var(--space-sm)) var(--space-sm) var(--space-sm);
+    background-color: rgba(21, 37, 53, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    box-shadow: var(--shadow-neu-raised);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    box-shadow: none;
   }
 
   .nav-toggle__checkbox:checked ~ .nav {
     transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav__list {
     flex-direction: column;
     align-items: stretch;
+    gap: var(--space-xs);
+    width: min(100%, 17.5rem);
+    padding: var(--space-sm);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-neu-raised);
+  }
+
+  .nav__list li {
+    width: 100%;
   }
 
   .nav__link {
-    padding: 0.75rem 1rem;
-    background-color: var(--color-surface);
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    text-align: center;
+    background-color: var(--color-bg);
+    border-radius: var(--radius-sm);
     box-shadow: var(--shadow-neu-raised-sm);
+    transition:
+      color var(--transition),
+      box-shadow var(--transition),
+      background var(--transition);
+  }
+
+  .nav__link:hover,
+  .nav__link:focus-visible {
+    background-color: var(--color-bg-alt);
   }
 
   .nav__link--active {
@@ -844,6 +884,13 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
     color: #fff;
     font-weight: 600;
     box-shadow: var(--shadow-neu-raised-sm), var(--shadow-glow);
+  }
+
+  .nav__link--active:hover,
+  .nav__link--active:focus-visible {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: #fff;
+    box-shadow: var(--shadow-neu-raised-sm), var(--shadow-glow-strong);
   }
 
   /* Animation croix du hamburger (CSS pur via checkbox) */
