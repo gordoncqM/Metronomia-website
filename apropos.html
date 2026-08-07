@@ -34,7 +34,7 @@
     html.i18n-loading [data-i18n]{visibility:hidden}
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez Metronomia : notre histoire, notre équipe et nos valeurs.">
+  <meta name="description" content="Metronomia — gestion, stockage et restitution de données. Notre histoire, notre territoire et nos valeurs.">
   <title>À propos — Metronomia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,9 +82,7 @@
       <div class="container">
         <h1 class="section__title" data-i18n="about_hero_title">À propos de Metronomia</h1>
         <p class="section__intro" data-i18n="about_hero_intro">
-          Metronomia développe des applications sur mesure pour gérer, stocker et valoriser vos données.
-          Notre mission : mettre la technologie au service de vos besoins, afin que chaque organisation
-          ou chaque personne puisse décider en toute confiance — sans se heurter aux contraintes techniques.
+          Metronomia conçoit des solutions pour gérer, stocker et restituer vos données. Fort d'un parcours international, nous mettons cette expertise au service du marché local — Haute-Savoie, Genève — et des organisations en France et en Suisse.
         </p>
       </div>
     </section>
@@ -93,6 +91,7 @@
     <section class="quick-nav">
       <div class="container">
         <div class="quick-nav__grid">
+          <a href="#territoire" class="quick-nav__tag quick-nav__tag--light" data-i18n="about_quicknav_territoire">Notre territoire</a>
           <a href="#histoire" class="quick-nav__tag quick-nav__tag--light" data-i18n="about_quicknav_history">Notre histoire</a>
           <a href="#equipe" class="quick-nav__tag quick-nav__tag--light" data-i18n="about_quicknav_team">Notre équipe</a>
           <a href="#valeurs" class="quick-nav__tag quick-nav__tag--light" data-i18n="about_quicknav_values">Nos valeurs</a>
@@ -101,13 +100,45 @@
       </div>
     </section>
   
+    <!-- Section Notre territoire -->
+    <section class="section section--light" id="territoire">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" data-i18n="about_territoire_title">Notre territoire</h2>
+          <p class="section__intro" data-i18n="about_territoire_intro">
+            Une expertise internationale, ancrée localement pour être proches de vos enjeux.
+          </p>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title" data-i18n="about_territoire_local_title">Haute-Savoie</h3>
+            <p class="card__text" data-i18n="about_territoire_local_text">
+              Notre marché local : accompagnement de proximité pour les organisations et entreprises du territoire.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title" data-i18n="about_territoire_geneve_title">Genève & Suisse</h3>
+            <p class="card__text" data-i18n="about_territoire_geneve_text">
+              Un relais naturel pour nos clients transfrontaliers et les acteurs du marché genevois.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title" data-i18n="about_territoire_france_title">France</h3>
+            <p class="card__text" data-i18n="about_territoire_france_text">
+              Des projets data menés avec rigueur, partout où vos données doivent créer de la valeur.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Section Histoire -->
     <section class="section section--light" id="histoire">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title" data-i18n="about_history_title">Notre histoire</h2>
           <p class="section__subtitle" data-i18n="about_history_subtitle">
-            Fondée en 2026, Metronomia est née de la volonté de révolutionner [ton domaine].
+            Fondée en 2026, Metronomia est née de la volonté de rendre la donnée accessible, fiable et actionnable.
           </p>
         </header>
         <div class="timeline">
@@ -115,14 +146,14 @@
             <div class="timeline-card__date" data-i18n="about_timeline_2026_date">2026</div>
             <h3 class="timeline-card__title" data-i18n="about_timeline_2026_title">Création de Metronomia</h3>
             <p class="timeline-card__text" data-i18n="about_timeline_2026_text">
-              L'entreprise a été fondée par Philippe Le Mounier avec pour objectif de simplifier la gestion, le stockage et l'accès aux données grâce à des applicatifs personnalisés et innovants.
+              Lancement de Metronomia par Philippe Le Mounier. Déploiement de deux data warehouses en cours — au Canada et en Californie — et ancrage sur le marché Haute-Savoie / Genève.
             </p>
           </article>
           <article class="timeline-card">
             <div class="timeline-card__date" data-i18n="about_timeline_2027_date">2027</div>
-            <h3 class="timeline-card__title" data-i18n="about_timeline_2027_title">Nos premières innovations</h3>
+            <h3 class="timeline-card__title" data-i18n="about_timeline_2027_title">Nouveaux applicatifs</h3>
             <p class="timeline-card__text" data-i18n="about_timeline_2027_text">
-              Nos premières innovations seront affichées ici.
+              Création de deux applicatifs sur mesure : l'un combinant technologies RFID et gestion de la donnée, l'autre dédié au suivi dans un cadre nautique.
             </p>
           </article>
         </div>
@@ -134,12 +165,12 @@
       <div class="container">
         <header class="section__header">
           <h2 class="section__title" data-i18n="about_team_title">Notre équipe</h2>
-          <p class="section__intro" data-i18n="about_team_intro">Une équipe passionnée et experte à votre service.</p>
+          <p class="section__intro" data-i18n="about_team_intro">Une équipe experte en data, proche de vos réalités terrain.</p>
         </header>
         <div class="cards">
           <article class="card">
             <h3 class="card__title" data-i18n="about_team_philippe_name">Philippe Le Mounier</h3>
-            <p class="card__text" data-i18n="about_team_philippe_desc">Fondateur & CEO — plus de 30 ans d'expérience en informatique décisionnelle.</p>
+            <p class="card__text" data-i18n="about_team_philippe_desc">Fondateur & CEO — plus de 30 ans d'expérience en informatique décisionnelle, avec un parcours international.</p>
           </article>
         </div>
       </div>
@@ -157,19 +188,19 @@
           <article class="value-card">
             <div class="card__icon"></div>
             <h3 class="card__title" data-i18n="about_values_innovation_title">Innovation</h3>
-            <p class="card__text" data-i18n="about_values_innovation_text">Nous repoussons les limites pour offrir des solutions uniques.</p>
+            <p class="card__text" data-i18n="about_values_innovation_text">Des solutions data avancées, avec un intérêt marqué pour la robotique et les technologies émergentes.</p>
           </article>
           <!-- Carte 2 : Collaboration -->
           <article class="value-card">
             <div class="card__icon"></div>
             <h3 class="card__title" data-i18n="about_values_collaboration_title">Collaboration</h3>
-            <p class="card__text" data-i18n="about_values_collaboration_text">Travailler ensemble pour atteindre l'excellence.</p>
+            <p class="card__text" data-i18n="about_values_collaboration_text">Travailler main dans la main avec nos clients pour des résultats concrets et durables.</p>
           </article>
           <!-- Carte 3 : Transparence -->
           <article class="value-card">
             <div class="card__icon"></div>
             <h3 class="card__title" data-i18n="about_values_transparency_title">Transparence</h3>
-            <p class="card__text" data-i18n="about_values_transparency_text">Une communication claire et honnête avec nos clients.</p>
+            <p class="card__text" data-i18n="about_values_transparency_text">Une communication claire à chaque étape de vos projets data.</p>
           </article>
         </div>
       </div>
@@ -204,6 +235,10 @@
         <a href="projets.html" data-i18n="nav_projets">Nos projets</a>
         <a href="apropos.html" data-i18n="nav_apropos">À propos</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <nav class="footer__legal" aria-label="Informations légales">
+        <a href="mentions-legales.html" data-i18n="footer_legal">Mentions légales</a>
+        <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
       </nav>
     </div>
   </footer>

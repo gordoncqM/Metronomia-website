@@ -34,7 +34,7 @@
     html.i18n-loading [data-i18n]{visibility:hidden}
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez Metronomia — une question, un devis ou un projet en tête.">
+  <meta name="description" content="Contactez Metronomia — projets data en Haute-Savoie, Genève, France et Suisse.">
   <title>Contact — Metronomia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,42 +81,17 @@
 
   <main>
 
-    <!-- Hero de la page contact -->
-    <section class="hero" id="contact-hero">
-      <div class="container hero__inner">
+    <!-- Coordonnées de contact -->
+    <section class="hero hero--contact" id="contact-hero">
+      <div class="container hero__inner hero__inner--center">
         <h1 class="hero__title" data-i18n="contact_hero_title">Contact</h1>
         <p class="hero__subtitle" data-i18n="contact_hero_subtitle">
-          Une question, un devis ou un projet en tête ? Écrivez-nous,
-          nous vous répondrons rapidement.
+          Une question ou un projet en tête ? Nous intervenons en Haute-Savoie, à Genève, en France et en Suisse. Écrivez-nous, nous vous répondrons rapidement.
         </p>
-      </div>
-    </section>
-
-    <!-- Formulaire — envoi via mailto en JavaScript (évite l'avertissement Mixed Content) -->
-    <section class="section" id="contact">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title" data-i18n="contact_form_title">Envoyez-nous un message</h2>
-          <p class="section__intro" data-i18n="contact_form_intro">
-            Remplissez le formulaire ci-dessous — l'envoi ouvrira votre client mail avec le message prérempli.
-          </p>
-        </header>
-
-        <form class="form" id="contact-form">
-          <div class="form__group">
-            <label for="name" data-i18n="contact_form_label_name">Nom</label>
-            <input type="text" id="name" name="Nom" required autocomplete="name">
-          </div>
-          <div class="form__group">
-            <label for="email" data-i18n="contact_form_label_email">E-mail</label>
-            <input type="email" id="email" name="E-mail" required autocomplete="email">
-          </div>
-          <div class="form__group">
-            <label for="message" data-i18n="contact_form_label_message">Message</label>
-            <textarea id="message" name="Message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary" data-i18n="contact_form_submit">Envoyer</button>
-        </form>
+        <div class="contact-details contact-details--featured">
+          <a href="tel:+33897129063" class="contact-details__link">08 97 12 90 63</a>
+          <a href="mailto:plm@metronomia.tech" class="contact-details__link">plm@metronomia.tech</a>
+        </div>
       </div>
     </section>
 
@@ -132,6 +107,10 @@
         <a href="projets.html" data-i18n="nav_projets">Nos projets</a>
         <a href="apropos.html" data-i18n="nav_apropos">À propos</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <nav class="footer__legal" aria-label="Informations légales">
+        <a href="mentions-legales.html" data-i18n="footer_legal">Mentions légales</a>
+        <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
       </nav>
     </div>
 
@@ -186,19 +165,6 @@
 
   // Gère le sélecteur de langue
   document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      // Ouvre le client mail avec le message prérempli
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = contactForm.querySelector('#name').value.trim();
-        const email = contactForm.querySelector('#email').value.trim();
-        const message = contactForm.querySelector('#message').value.trim();
-        const body = `Nom: ${name}\nE-mail: ${email}\n\n${message}`;
-        window.location.href = `mailto:contact@metronomia.tech?subject=${encodeURIComponent('Contact Metronomia')}&body=${encodeURIComponent(body)}`;
-      });
-    }
-
     const languageBtn = document.getElementById('language-btn');
     const languageMenu = document.getElementById('language-menu');
 
