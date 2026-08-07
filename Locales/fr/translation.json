@@ -28,7 +28,6 @@
     "about_list_2": "Proximité Haute-Savoie & Genève",
     "about_list_3": "Accompagnement sur mesure, sans contrainte technique",
     "about_cta": "En savoir plus",
-    "about_placeholder": "Image ou visuel",
 
     "about_hero_title": "À propos de Metronomia",
     "about_hero_intro": "Metronomia conçoit des solutions pour gérer, stocker et restituer vos données. Fort d'un parcours international, nous mettons cette expertise au service du marché local — Haute-Savoie, Genève — et des organisations en France et en Suisse.",
@@ -90,7 +89,6 @@
     "projets_hero_link_robotique": "Robotique",
     "projets_hero_link_contact": "Discuter d'un projet",
 
-    "projets_placeholder": "Aperçu du projet",
     "projets_tag_en_cours": "En cours",
     "projets_tag_a_venir": "À venir",
     "projets_tag_veille": "Veille",
@@ -151,7 +149,6 @@
     "services_methode_step_2": "Conception de l'architecture (gestion, stockage, restitution)",
     "services_methode_step_3": "Développement itératif avec points de validation",
     "services_methode_step_4": "Déploiement, formation et restitution opérationnelle",
-    "services_methode_visual": "Illustration processus",
 
     "services_cta_title": "Parlons de votre projet data",
     "services_cta_intro": "Gestion, stockage ou restitution : construisons ensemble la solution adaptée à vos ambitions.",

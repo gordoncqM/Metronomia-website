@@ -28,7 +28,6 @@
     "about_list_2": "Vicinanza Alta Savoia & Ginevra",
     "about_list_3": "Accompagnamento su misura, senza vincoli tecnici",
     "about_cta": "Scopri di più",
-    "about_placeholder": "Immagine o visual",
 
     "about_hero_title": "Chi siamo",
     "about_hero_intro": "Metronomia progetta soluzioni per gestire, archiviare e restituire i vostri dati. Con un percorso internazionale, mettiamo questa competenza al servizio del mercato locale — Alta Savoia, Ginevra — e delle organizzazioni in Francia e Svizzera.",
@@ -89,7 +88,6 @@
     "projets_hero_link_robotique": "Robotica",
     "projets_hero_link_contact": "Parliamo di un progetto",
 
-    "projets_placeholder": "Anteprima del progetto",
     "projets_tag_en_cours": "In corso",
     "projets_tag_a_venir": "In arrivo",
     "projets_tag_veille": "Osservazione",
@@ -150,7 +148,6 @@
     "services_methode_step_2": "Progettazione dell'architettura (gestione, stoccaggio, restituzione)",
     "services_methode_step_3": "Sviluppo iterativo con punti di validazione",
     "services_methode_step_4": "Deployment, formazione e restituzione operativa",
-    "services_methode_visual": "Illustrazione del processo",
 
     "services_cta_title": "Parliamo del vostro progetto data",
     "services_cta_intro": "Gestione, stoccaggio o restituzione: costruiamo insieme la soluzione adatta alle vostre ambizioni.",

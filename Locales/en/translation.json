@@ -28,7 +28,6 @@
     "about_list_2": "Local presence in Haute-Savoie & Geneva",
     "about_list_3": "Tailored support, without technical barriers",
     "about_cta": "Learn more",
-    "about_placeholder": "Image or visual",
 
     "about_hero_title": "About Metronomia",
     "about_hero_intro": "Metronomia designs solutions to manage, store and deliver your data. With an international background, we bring this expertise to local markets — Haute-Savoie, Geneva — and to organizations in France and Switzerland.",
@@ -89,7 +88,6 @@
     "projets_hero_link_robotique": "Robotics",
     "projets_hero_link_contact": "Discuss a project",
 
-    "projets_placeholder": "Project preview",
     "projets_tag_en_cours": "In progress",
     "projets_tag_a_venir": "Coming soon",
     "projets_tag_veille": "Watch",
@@ -150,7 +148,6 @@
     "services_methode_step_2": "Architecture design (management, storage, delivery)",
     "services_methode_step_3": "Iterative development with validation checkpoints",
     "services_methode_step_4": "Deployment, training and operational delivery",
-    "services_methode_visual": "Process illustration",
 
     "services_cta_title": "Let's talk about your data project",
     "services_cta_intro": "Management, storage or delivery: let's build the solution that fits your ambitions together.",

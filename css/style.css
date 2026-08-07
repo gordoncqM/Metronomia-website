@@ -528,7 +528,7 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 }
 
 /* =============================================
-   Project cards — cartes projets avec image optionnelle
+   Project cards — cartes projets (contenu texte)
    ============================================= */
 
 .project-cards {
@@ -570,40 +570,12 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
   opacity: 1;
 }
 
-.project-card__media {
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-}
-
-.project-card__image {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  transition: transform var(--transition);
-}
-
-.project-card:hover .project-card__image {
-  transform: scale(1.03);
-}
-
-.project-card__placeholder {
-  aspect-ratio: 16 / 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-bg-alt);
-  color: var(--color-text-muted);
-  font-size: 0.8125rem;
-  font-family: var(--font-mono);
-  box-shadow: var(--shadow-neu-pressed-sm);
-}
-
 .project-card__body {
-  padding: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: var(--space-xs);
 }
 
 .project-card__tag {
@@ -647,14 +619,12 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 }
 
 /* =============================================
-   About — grille 2 colonnes (1 en mobile)
+   About — bloc texte centré, lisible
    ============================================= */
 
 .about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: center;
+  max-width: 42rem;
+  margin-inline: auto;
 }
 
 .about__list {
@@ -696,20 +666,6 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   border-radius: 50%;
   box-shadow: var(--shadow-neu-raised-sm);
-}
-
-/* Zone visuel enfoncée (effet encastré) */
-.about__placeholder {
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  font-family: var(--font-mono);
-  box-shadow: var(--shadow-neu-pressed);
 }
 
 /* =============================================
@@ -1094,14 +1050,6 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 
   .nav-toggle__checkbox:checked + .nav-toggle span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-  }
-
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  .about__visual {
-    order: -1;
   }
 
   .form {
