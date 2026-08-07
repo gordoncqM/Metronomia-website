@@ -8,24 +8,47 @@
 <head>
   <!-- Métadonnées & ressources (identiques à index.html) -->
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#d4d9ec">
+  <meta name="color-scheme" content="light">
+  <!-- Bootstrap pré-rendu : langue i18n + calque de transition inter-pages -->
+  <script>
+    (function () {
+      var supported = ['fr', 'en', 'it'];
+      var stored = localStorage.getItem('i18nextLng');
+      var nav = (navigator.language || 'fr').split('-')[0];
+      var lang = stored || nav;
+      if (supported.indexOf(lang) === -1) lang = 'fr';
+      // Masque le texte FR si la langue active n'est pas le français
+      if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
+      // Calque bleu à l'entrée après une navigation interne
+      if (sessionStorage.getItem('metronomia-page-enter') === '1') {
+        document.documentElement.classList.add('page-transition-enter');
+      }
+    })();
+  </script>
+  <!-- CSS critique inline (fond, i18n, transitions — évite le flash blanc) -->
+  <style>
+    html,body{background-color:#d4d9ec;color:#152535}
+    html::after{content:'';position:fixed;inset:0;background:#d4d9ec;z-index:99999;opacity:0;pointer-events:none;transition:opacity .08s ease-out}
+    html.page-transition-exit::after,html.page-transition-enter::after{opacity:1}
+    html.page-transition-exit::after{transition:none}
+    html.i18n-loading [data-i18n]{visibility:hidden}
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez nos services — Metronomia.">
-  <title>Services — Tech Neumorphisme — Metronomia</title>
+  <meta name="description" content="Services data Metronomia — gestion, stockage, restitution et accompagnement sur mesure.">
+  <title>Services — Metronomia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
 </head>
 <body>
 
   <!-- En-tête sticky : logo + navigation inter-pages -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Metronom<span class="logo__accent" data-i18n="logo_ia">ia</span></a>
+      <a href="index.html" class="logo"><span data-i18n="logo">Metronom</span><span class="logo__accent" data-i18n="logo_ia">ia</span></a>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle__checkbox" aria-hidden="true">
       <label for="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
@@ -41,15 +64,16 @@
           <li><a href="projets.html" class="nav__link" data-i18n="nav_projets">Nos projets</a></li>
           <li><a href="apropos.html" class="nav__link" data-i18n="nav_apropos">À propos</a></li>
           <li><a href="contact.html" class="nav__link" data-i18n="nav_contact">Contact</a></li>
-          <!-- Sélecteur de langue (à inclure dans chaque page) -->
-          <div class="language-selector">
-            <button id="language-btn" class="language-btn" data-i18n="language_btn">🌍 Langue</button>
-            <div id="language-menu" class="language-menu">
-              <button class="lang-option" data-lang="fr"><span class="fi fi-fr"></span> Français</button>
-              <button class="lang-option" data-lang="en"><span class="fi fi-gb"></span> English</button>
-              <button class="lang-option" data-lang="it"><span class="fi fi-it"></span> Italiano</button>
+          <li>
+            <div class="language-selector">
+              <button id="language-btn" class="language-btn" data-i18n="language_btn">🌍 Langue</button>
+              <div id="language-menu" class="language-menu">
+                <button class="lang-option" data-lang="fr"><span class="fi fi-fr"></span> Français</button>
+                <button class="lang-option" data-lang="en"><span class="fi fi-gb"></span> English</button>
+                <button class="lang-option" data-lang="it"><span class="fi fi-it"></span> Italiano</button>
+              </div>
             </div>
-          </div>
+          </li>
         </ul>
 
       </nav>
@@ -63,13 +87,12 @@
       <div class="container hero__inner">
         <h1 class="hero__title" data-i18n="services_hero_title">Nos services</h1>
         <p class="hero__subtitle" data-i18n="services_hero_subtitle">
-          Découvrez l'ensemble de nos prestations. Chaque service est pensé pour répondre
-          à vos besoins avec rigueur et accompagnement personnalisé.
+          Gestion, stockage et restitution de la donnée — des prestations pensées pour vos enjeux métier, en Haute-Savoie, à Genève et au-delà.
         </p>
         <div class="hero__actions">
           <a href="contact.html" class="btn btn--primary" data-i18n="services_hero_link_devis">Demander un devis</a>
           <a href="#offres" class="btn btn--secondary" data-i18n="services_hero_link_offres">Voir les offres</a>
-          <a href="#methode" class="btn btn--secondary" data-i18n="services_hero_link_suivi">Suivi client</a>
+          <a href="#methode" class="btn btn--secondary" data-i18n="services_hero_link_suivi">Notre approche</a>
         </div>
       </div>
     </section>
@@ -78,53 +101,47 @@
     <section class="section" id="offres">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title" data-i18n="services_offres_title"></h2>
+          <h2 class="section__title" data-i18n="services_offres_title">Nos domaines d'expertise</h2>
           <p class="section__intro" data-i18n="services_offres_intro">
-            Plusieurs domaines d'expertise pour vous accompagner de la conception à la livraison.
+            Trois piliers — gestion, stockage, restitution — et un accompagnement complet pour vos projets data.
           </p>
         </header>
 
         <div class="cards">
           <article class="card">
-            <h3 class="card__title" data-i18n="services_offre_1_title">Developpement de site vitrine</h3>
+            <h3 class="card__title" data-i18n="services_offre_1_title">Gestion de la donnée</h3>
             <p class="card__text" data-i18n="services_offre_1_text">
-              Conception et développement de sites vitrines modernes, accessibles et adaptés
-              à tous les écrans. Une présence en ligne soignée qui reflète votre image.
+              Applicatifs sur mesure pour recueillir, contrôler et structurer vos informations à la source.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_offre_2_title">Suivi client</h3>
+            <h3 class="card__title" data-i18n="services_offre_2_title">Stockage</h3>
             <p class="card__text" data-i18n="services_offre_2_text">
-              Accompagnement stratégique : audit, recommandations et feuille de route
-              pour structurer votre projet digital et atteindre vos objectifs.
+              Datawarehouse, datamart et bases de données : une architecture organisée, évolutive et adaptée à vos volumes.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_offre_3_title">Maintenance et support</h3>
+            <h3 class="card__title" data-i18n="services_offre_3_title">Restitution</h3>
             <p class="card__text" data-i18n="services_offre_3_text">
-              Maintenance, mises à jour et support continu pour garantir performance,
-              sécurité et évolutivité de vos outils dans la durée.
+              Tableaux de bord et reporting via Power BI, applicatif web, OpenOffice ou Microsoft Office.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_offre_4_title">Conception de charte graphique</h3>
+            <h3 class="card__title" data-i18n="services_offre_4_title">Applications sur mesure</h3>
             <p class="card__text" data-i18n="services_offre_4_text">
-              Identité visuelle et chartes graphiques sur mesure — du wireframe au
-              déploiement CSS, en cohérence avec votre marque.
+              Solutions métier adaptées à vos processus — RFID, suivi terrain, secteurs spécialisés dont le nautique.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_offre_5_title">Référencement naturel</h3>
+            <h3 class="card__title" data-i18n="services_offre_5_title">Conseil & accompagnement</h3>
             <p class="card__text" data-i18n="services_offre_5_text">
-              Optimisation des performances et du référencement naturel pour améliorer
-              votre visibilité et l'expérience de vos visiteurs.
+              Audit, cadrage et feuille de route pour structurer vos projets data et garantir leur réussite.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_offre_6_title">Documentations techniques</h3>
+            <h3 class="card__title" data-i18n="services_offre_6_title">Maintenance & évolution</h3>
             <p class="card__text" data-i18n="services_offre_6_text">
-              Formation et transfert de compétences pour que vous puissiez gérer
-              votre site en autonomie, en toute confiance.
+              Support continu, mises à jour et évolutions pour maintenir vos solutions data performantes dans la durée.
             </p>
           </article>
         </div>
@@ -136,21 +153,17 @@
       <div class="container about">
         <div class="about__content">
           <header class="section__header section__header--left">
-            <h2 class="section__title" data-i18n="services_methode_title">Démarche avec la clientèle</h2>
+            <h2 class="section__title" data-i18n="services_methode_title">Notre démarche</h2>
             <p class="section__intro" data-i18n="services_methode_intro">
-              Notre approche repose sur l'écoute, la transparence et un suivi régulier
-              à chaque étape de votre projet.
+              Une approche structurée, de l'analyse de vos besoins à la restitution opérationnelle de vos données.
             </p>
           </header>
           <ul class="about__list">
-            <li data-i18n="services_methode_step_1">Analyse de vos besoins et de votre contexte</li>
-            <li data-i18n="services_methode_step_2">Proposition sur mesure et devis détaillé</li>
-            <li data-i18n="services_methode_step_3">Réalisation itérative avec points de validation</li>
-            <li data-i18n="services_methode_step_4">Livraison, formation et support post-projet</li>
+            <li data-i18n="services_methode_step_1">Analyse de vos sources de données et de vos objectifs métier</li>
+            <li data-i18n="services_methode_step_2">Conception de l'architecture (gestion, stockage, restitution)</li>
+            <li data-i18n="services_methode_step_3">Développement itératif avec points de validation</li>
+            <li data-i18n="services_methode_step_4">Déploiement, formation et restitution opérationnelle</li>
           </ul>
-        </div>
-        <div class="about__visual" aria-hidden="true">
-          <div class="about__placeholder" data-i18n="services_methode_visual">Illustration processus</div>
         </div>
       </div>
     </section>
@@ -159,9 +172,9 @@
     <section class="section" id="cta-services">
       <div class="container">
         <header class="section__header">
-          <h2 class="section__title" data-i18n="services_cta_title">Demande de prestations</h2>
+          <h2 class="section__title" data-i18n="services_cta_title">Parlons de votre projet data</h2>
           <p class="section__intro" data-i18n="services_cta_intro">
-            Un projet en tête ? Parlons-en et construisons ensemble la solution adaptée à vos ambitions.
+            Gestion, stockage ou restitution : construisons ensemble la solution adaptée à vos ambitions.
           </p>
         </header>
         <div class="hero__actions hero__actions--center">
@@ -184,10 +197,19 @@
         <a href="apropos.html" data-i18n="nav_apropos">À propos</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
+      <nav class="footer__legal" aria-label="Informations légales">
+        <a href="mentions-legales.html" data-i18n="footer_legal">Mentions légales</a>
+        <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
+      </nav>
     </div>
   </footer>
 
 
+  <!-- Transitions de page + internationalisation (i18next) -->
+  <script src="js/page-transition.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
   <script>
     // Initialise i18next
     i18next
@@ -195,33 +217,41 @@
       .use(i18nextBrowserLanguageDetector)
       .init({
         fallbackLng: 'fr',
+        supportedLngs: ['fr', 'en', 'it'], // Langues disponibles sur le site
+        load: 'languageOnly', // fr-FR → fr (évite les 404 Locales/fr-FR/)
         backend: {
-          loadPath: '/Locales/{{lng}}/translation.json',
+          loadPath: 'Locales/{{lng}}/translation.json',
         },
         detection: {
-          order: ['localStorage', 'navigator'],
-          caches: ['localStorage'],
+          order: ['localStorage', 'navigator'], // Priorité à localStorage
+          caches: ['localStorage'], // Sauvegarde la langue dans localStorage
         },
+        // Ajoute cette option pour éviter les conflits avec le HTML
         interpolation: {
-          escapeValue: false,
+          escapeValue: false, // Désactive l'échappement des balises HTML
         },
       }, (err, t) => {
         if (err) {
           console.error("Erreur i18next :", err);
+          document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
           return;
         }
+        // Met à jour le contenu une fois i18next prêt
         updateContent();
-        updateLanguageButton(i18next.language); // NOUVEAU : affiche la bonne langue au chargement
+        updateLanguageButton(i18next.language);
       });
-
+  
+    // Fonction pour mettre à jour le contenu
     function updateContent() {
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        el.innerHTML = i18next.t(key);
+        el.innerHTML = i18next.t(key); // Utilise innerHTML pour gérer les balises HTML
       });
+      document.documentElement.classList.remove('i18n-loading'); // Affiche les textes traduits
+      document.documentElement.lang = i18next.language; // Met à jour l'attribut lang du document
     }
+  
 
-    // NOUVEAU : met à jour le bouton avec le drapeau + nom de la langue active
     function updateLanguageButton(lang) {
       const languageBtn = document.getElementById('language-btn');
       const activeOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
@@ -233,28 +263,30 @@
     document.addEventListener('DOMContentLoaded', () => {
       const languageBtn = document.getElementById('language-btn');
       const languageMenu = document.getElementById('language-menu');
-
+  
       if (languageBtn && languageMenu) {
         languageBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           languageMenu.classList.toggle('show');
         });
-
+  
         document.addEventListener('click', () => {
           languageMenu.classList.remove('show');
         });
-
+  
         document.querySelectorAll('.lang-option').forEach(option => {
           option.addEventListener('click', (e) => {
             e.stopPropagation();
             const lang = option.getAttribute('data-lang');
+            document.documentElement.classList.add('i18n-loading'); // Masque le flash FR pendant le chargement
             i18next.changeLanguage(lang, (err, t) => {
               if (err) {
                 console.error("Erreur de changement de langue :", err);
+                document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
                 return;
               }
               updateContent();
-              updateLanguageButton(lang); // NOUVEAU : réapplique le drapeau après la traduction
+              updateLanguageButton(lang);
               languageMenu.classList.remove('show');
             });
           });

@@ -7,23 +7,47 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#d4d9ec">
+  <meta name="color-scheme" content="light">
+  <!-- Bootstrap pré-rendu : langue i18n + calque de transition inter-pages -->
+  <script>
+    (function () {
+      var supported = ['fr', 'en', 'it'];
+      var stored = localStorage.getItem('i18nextLng');
+      var nav = (navigator.language || 'fr').split('-')[0];
+      var lang = stored || nav;
+      if (supported.indexOf(lang) === -1) lang = 'fr';
+      // Masque le texte FR si la langue active n'est pas le français
+      if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
+      // Calque bleu à l'entrée après une navigation interne
+      if (sessionStorage.getItem('metronomia-page-enter') === '1') {
+        document.documentElement.classList.add('page-transition-enter');
+      }
+    })();
+  </script>
+  <!-- CSS critique inline (fond, i18n, transitions — évite le flash blanc) -->
+  <style>
+    html,body{background-color:#d4d9ec;color:#152535}
+    html::after{content:'';position:fixed;inset:0;background:#d4d9ec;z-index:99999;opacity:0;pointer-events:none;transition:opacity .08s ease-out}
+    html.page-transition-exit::after,html.page-transition-enter::after{opacity:1}
+    html.page-transition-exit::after{transition:none}
+    html.i18n-loading [data-i18n]{visibility:hidden}
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez Metronomia — une question, un devis ou un projet en tête.">
-  <title>Contact — Tech Neumorphisme — Metronomia</title>
+  <meta name="description" content="Contactez Metronomia — projets data en Haute-Savoie, Genève, France et Suisse.">
+  <title>Contact — Metronomia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
 </head>
 <body>
 
+  <!-- En-tête sticky : logo + navigation inter-pages -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Metronom<span class="logo__accent" data-i18n="logo_ia">ia</span></a>
+      <a href="index.html" class="logo"><span data-i18n="logo">Metronom</span><span class="logo__accent" data-i18n="logo_ia">ia</span></a>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle__checkbox" aria-hidden="true">
       <label for="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
@@ -39,15 +63,16 @@
           <li><a href="projets.html" class="nav__link" data-i18n="nav_projets">Nos projets</a></li>
           <li><a href="apropos.html" class="nav__link" data-i18n="nav_apropos">À propos</a></li>
           <li><a href="contact.html" class="nav__link nav__link--active" aria-current="page" data-i18n="nav_contact">Contact</a></li>
-          <!-- Sélecteur de langue (à inclure dans chaque page) -->
-          <div class="language-selector">
-            <button id="language-btn" class="language-btn" data-i18n="language_btn">🌍 Langue</button>
-            <div id="language-menu" class="language-menu">
-              <button class="lang-option" data-lang="fr"><span class="fi fi-fr"></span> Français</button>
-              <button class="lang-option" data-lang="en"><span class="fi fi-gb"></span> English</button>
-              <button class="lang-option" data-lang="it"><span class="fi fi-it"></span> Italiano</button>
+          <li>
+            <div class="language-selector">
+              <button id="language-btn" class="language-btn" data-i18n="language_btn">🌍 Langue</button>
+              <div id="language-menu" class="language-menu">
+                <button class="lang-option" data-lang="fr"><span class="fi fi-fr"></span> Français</button>
+                <button class="lang-option" data-lang="en"><span class="fi fi-gb"></span> English</button>
+                <button class="lang-option" data-lang="it"><span class="fi fi-it"></span> Italiano</button>
+              </div>
             </div>
-          </div>
+          </li>
         </ul>
 
       </nav>
@@ -56,45 +81,23 @@
 
   <main>
 
-    <section class="hero" id="contact-hero">
-      <div class="container hero__inner">
+    <!-- Coordonnées de contact -->
+    <section class="hero hero--contact" id="contact-hero">
+      <div class="container hero__inner hero__inner--center">
         <h1 class="hero__title" data-i18n="contact_hero_title">Contact</h1>
         <p class="hero__subtitle" data-i18n="contact_hero_subtitle">
-          Une question, un devis ou un projet en tête ? Écrivez-nous,
-          nous vous répondrons rapidement.
+          Une question ou un projet en tête ? Nous intervenons en Haute-Savoie, à Genève, en France et en Suisse. Écrivez-nous, nous vous répondrons rapidement.
         </p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title" data-i18n="contact_form_title">Envoyez-nous un message</h2>
-          <p class="section__intro" data-i18n="contact_form_intro">
-            Remplissez le formulaire ci-dessous — l'envoi ouvrira votre client mail avec le message prérempli.
-          </p>
-        </header>
-
-        <form class="form" action="mailto:contact@metronomia.tech" method="post" enctype="text/plain">
-          <div class="form__group">
-            <label for="name" data-i18n="contact_form_label_name">Nom</label>
-            <input type="text" id="name" name="Nom" required autocomplete="name">
-          </div>
-          <div class="form__group">
-            <label for="email" data-i18n="contact_form_label_email">E-mail</label>
-            <input type="email" id="email" name="E-mail" required autocomplete="email">
-          </div>
-          <div class="form__group">
-            <label for="message" data-i18n="contact_form_label_message">Message</label>
-            <textarea id="message" name="Message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary" data-i18n="contact_form_submit">Envoyer</button>
-        </form>
+        <div class="contact-details contact-details--featured">
+          <a href="tel:+33897129063" class="contact-details__link">08 97 12 90 63</a>
+          <a href="mailto:plm@metronomia.tech" class="contact-details__link">plm@metronomia.tech</a>
+        </div>
       </div>
     </section>
 
   </main>
 
+  <!-- Pied de page : liens inter-pages -->
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__copy" data-i18n="footer_copy">&copy; 2026 — Tous droits réservés</p>
@@ -105,12 +108,21 @@
         <a href="apropos.html" data-i18n="nav_apropos">À propos</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
+      <nav class="footer__legal" aria-label="Informations légales">
+        <a href="mentions-legales.html" data-i18n="footer_legal">Mentions légales</a>
+        <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
+      </nav>
     </div>
 
   </footer>
 
 
 
+  <!-- Transitions de page + internationalisation (i18next) -->
+  <script src="js/page-transition.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
   <script>
     // Initialise i18next
     i18next
@@ -118,8 +130,10 @@
       .use(i18nextBrowserLanguageDetector)
       .init({
         fallbackLng: 'fr',
+        supportedLngs: ['fr', 'en', 'it'], // Langues disponibles sur le site
+        load: 'languageOnly', // fr-FR → fr (évite les 404 Locales/fr-FR/)
         backend: {
-          loadPath: '/Locales/{{lng}}/translation.json',
+          loadPath: 'Locales/{{lng}}/translation.json',
         },
         detection: {
           order: ['localStorage', 'navigator'],
@@ -131,10 +145,11 @@
       }, (err, t) => {
         if (err) {
           console.error("Erreur i18next :", err);
+          document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
           return;
         }
         updateContent();
-        updateLanguageButton(i18next.language); // NOUVEAU : affiche la bonne langue au chargement
+        updateLanguageButton(i18next.language);
       });
 
     function updateContent() {
@@ -142,9 +157,10 @@
         const key = el.getAttribute('data-i18n');
         el.innerHTML = i18next.t(key);
       });
+      document.documentElement.classList.remove('i18n-loading'); // Affiche les textes traduits
+      document.documentElement.lang = i18next.language; // Met à jour l'attribut lang du document
     }
 
-    // NOUVEAU : met à jour le bouton avec le drapeau + nom de la langue active
     function updateLanguageButton(lang) {
       const languageBtn = document.getElementById('language-btn');
       const activeOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
@@ -171,13 +187,15 @@
           option.addEventListener('click', (e) => {
             e.stopPropagation();
             const lang = option.getAttribute('data-lang');
+            document.documentElement.classList.add('i18n-loading'); // Masque le flash FR pendant le chargement
             i18next.changeLanguage(lang, (err, t) => {
               if (err) {
                 console.error("Erreur de changement de langue :", err);
+                document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
                 return;
               }
               updateContent();
-              updateLanguageButton(lang); // NOUVEAU : réapplique le drapeau après la traduction
+              updateLanguageButton(lang);
               languageMenu.classList.remove('show');
             });
           });

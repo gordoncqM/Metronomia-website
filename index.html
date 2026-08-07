@@ -6,16 +6,36 @@
 -->
 <html lang="fr">
 <head>
-  <head>
-    <!-- Autres balises (meta, title, etc.) -->
-    <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
-  </head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#d4d9ec">
+  <meta name="color-scheme" content="light">
+  <!-- Bootstrap pré-rendu : langue i18n + calque de transition inter-pages -->
+  <script>
+    (function () {
+      var supported = ['fr', 'en', 'it'];
+      var stored = localStorage.getItem('i18nextLng');
+      var nav = (navigator.language || 'fr').split('-')[0];
+      var lang = stored || nav;
+      if (supported.indexOf(lang) === -1) lang = 'fr';
+      // Masque le texte FR si la langue active n'est pas le français
+      if (lang !== 'fr') document.documentElement.classList.add('i18n-loading');
+      // Calque bleu à l'entrée après une navigation interne
+      if (sessionStorage.getItem('metronomia-page-enter') === '1') {
+        document.documentElement.classList.add('page-transition-enter');
+      }
+    })();
+  </script>
+  <!-- CSS critique inline (fond, i18n, transitions — évite le flash blanc) -->
+  <style>
+    html,body{background-color:#d4d9ec;color:#152535}
+    html::after{content:'';position:fixed;inset:0;background:#d4d9ec;z-index:99999;opacity:0;pointer-events:none;transition:opacity .08s ease-out}
+    html.page-transition-exit::after,html.page-transition-enter::after{opacity:1}
+    html.page-transition-exit::after{transition:none}
+    html.i18n-loading [data-i18n]{visibility:hidden}
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site vitrine — présentation de l'activité et des services.">
-  <title>  Metronomia</title>
+  <meta name="description" content="Metronomia — Gestion, stockage et restitution de données. Haute-Savoie, Genève, France et Suisse.">
+  <title>Metronomia — Gestion, stockage et restitution de données</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -24,6 +44,7 @@
 </head>
 <body>
 
+  <!-- En-tête sticky : logo + navigation inter-pages -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo"><span data-i18n="logo">Metronom</span><span class="logo__accent" data-i18n="logo_ia">ia</span></a>
@@ -61,15 +82,13 @@
   </header>
   
   <main>
+    <!-- Hero d'accueil -->
     <section class="hero" id="accueil">
       <div class="container hero__inner">
         <h1 class="hero__title hero__title--brand">
           Metronom<span class="hero__title-accent" data-i18n="hero_title_ia">IA</span>
         </h1>
-        <p class="hero__subtitle hero__subtitle--featured" data-i18n="hero_subtitle">
-          La <strong class="hero__subtitle-highlight">technologie</strong> à votre mesure,
-          l’<strong class="hero__subtitle-highlight">expertise</strong> à votre écoute.
-        </p>
+        <p class="hero__subtitle hero__subtitle--featured" data-i18n="hero_subtitle">La <strong class="hero__subtitle-highlight">technologie</strong> à votre mesure, <span class="hero__subtitle-no-break">l'<strong class="hero__subtitle-highlight">expertise</strong></span> à votre écoute.</p>
         <div class="hero__actions">
           <a href="contact.html" class="btn btn--primary" data-i18n="hero_cta_contact">Nous contacter</a>
           <a href="services.html" class="btn btn--secondary" data-i18n="hero_cta_services">Découvrir nos services</a>
@@ -77,63 +96,63 @@
       </div>
     </section>
   
+    <!-- Aperçu des domaines d'expertise -->
     <section class="section" id="services">
       <div class="container">
         <header class="section__header">
           <h2 class="section__title" data-i18n="services_title">Nos domaines d'expertise</h2>
           <p class="section__intro" data-i18n="services_intro">
-            Nous couvrons tous les terrains d'un projet digital et numérique afin de vous garantir une solution complète et adaptée à vos besoins.
+            De la collecte à la restitution, nous accompagnons vos projets data avec des solutions sur mesure.
           </p>
         </header>
   
         <div class="cards">
           <article class="card">
-            <h3 class="card__title" data-i18n="services_fullstack_title">Developpement fullstack</h3>
+            <h3 class="card__title" data-i18n="services_fullstack_title">Gestion de la donnée</h3>
             <p class="card__text" data-i18n="services_fullstack_text">
-              Nous couvrons tout projets de développement web ou mobile afin d'assurer une solution complète.
+              Applicatifs pour recueillir, structurer et fiabiliser vos informations au fil de vos processus métier.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_support_title">Suivi et conseils clients</h3>
+            <h3 class="card__title" data-i18n="services_support_title">Stockage</h3>
             <p class="card__text" data-i18n="services_support_text">
-              Nous intervenons au coeur de vos projets afin de vous procurez les outils nécessaires pour vous accompagner dans vos démarches.
+              Datawarehouse, datamart et bases de données pour organiser et centraliser vos données de manière durable.
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title" data-i18n="services_maintenance_title">Maintenance et support</h3>
+            <h3 class="card__title" data-i18n="services_maintenance_title">Restitution</h3>
             <p class="card__text" data-i18n="services_maintenance_text">
-              Même après la livraison nous vous accompagnons dans votre expérience numérique afin de vous garantir un support continu et une évolution constante.
+              Reporting et tableaux de bord : Power BI, applicatif web, OpenOffice ou Microsoft Office — selon vos besoins.
             </p>
           </article>
         </div>
       </div>
     </section>
   
+    <!-- Aperçu à propos + lien vers la page dédiée -->
     <section class="section section--alt" id="apropos">
       <div class="container about">
         <div class="about__content">
           <header class="section__header section__header--left">
             <h2 class="section__title" data-i18n="about_title">À propos de Metronomia</h2>
             <p class="section__intro" data-i18n="about_intro">
-              Racontez votre histoire, vos valeurs et ce qui vous distingue. Ce bloc est pensé pour inspirer confiance et donner envie de vous contacter.
+              Fort d'un parcours international, Metronomia met son expertise data au service du marché local et transfrontalier.
             </p>
           </header>
           <ul class="about__list">
-            <li data-i18n="about_list_1">Expérience et expertise</li>
-            <li data-i18n="about_list_2">Approche personnalisée</li>
-            <li data-i18n="about_list_3">Engagement qualité</li>
+            <li data-i18n="about_list_1">Expérience internationale en informatique décisionnelle</li>
+            <li data-i18n="about_list_2">Proximité Haute-Savoie & Genève</li>
+            <li data-i18n="about_list_3">Accompagnement sur mesure, sans contrainte technique</li>
           </ul>
           <div class="hero__actions">
             <a href="apropos.html" class="btn btn--secondary" data-i18n="about_cta">En savoir plus</a>
           </div>
         </div>
-        <div class="about__visual" aria-hidden="true">
-          <div class="about__placeholder" data-i18n="about_placeholder">Image ou visuel</div>
-        </div>
       </div>
     </section>
   </main>
   
+  <!-- Pied de page : liens inter-pages -->
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__copy" data-i18n="footer_copy">&copy; 2026 — Tous droits réservés</p>
@@ -144,9 +163,18 @@
         <a href="apropos.html" data-i18n="nav_apropos">À propos</a>
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
+      <nav class="footer__legal" aria-label="Informations légales">
+        <a href="mentions-legales.html" data-i18n="footer_legal">Mentions légales</a>
+        <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
+      </nav>
     </div>
   </footer>
 
+  <!-- Transitions de page + internationalisation (i18next) -->
+  <script src="js/page-transition.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next@22.4.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.1.1/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
   <script>
     // Initialise i18next
     i18next
@@ -154,8 +182,10 @@
       .use(i18nextBrowserLanguageDetector)
       .init({
         fallbackLng: 'fr',
+        supportedLngs: ['fr', 'en', 'it'], // Langues disponibles sur le site
+        load: 'languageOnly', // fr-FR ? fr (�vite les 404 Locales/fr-FR/)
         backend: {
-          loadPath: '/Locales/{{lng}}/translation.json',
+          loadPath: 'Locales/{{lng}}/translation.json',
         },
         detection: {
           order: ['localStorage', 'navigator'],
@@ -167,6 +197,7 @@
       }, (err, t) => {
         if (err) {
           console.error("Erreur i18next :", err);
+          document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
           return;
         }
         updateContent();
@@ -178,6 +209,8 @@
         const key = el.getAttribute('data-i18n');
         el.innerHTML = i18next.t(key);
       });
+      document.documentElement.classList.remove('i18n-loading'); // Affiche les textes traduits
+      document.documentElement.lang = i18next.language; // Met à jour l'attribut lang du document
     }
 
     // NOUVEAU : met à jour le bouton avec le drapeau + nom de la langue active
@@ -207,9 +240,11 @@
           option.addEventListener('click', (e) => {
             e.stopPropagation();
             const lang = option.getAttribute('data-lang');
+            document.documentElement.classList.add('i18n-loading'); // Masque le flash FR pendant le chargement
             i18next.changeLanguage(lang, (err, t) => {
               if (err) {
                 console.error("Erreur de changement de langue :", err);
+                document.documentElement.classList.remove('i18n-loading'); // Restaure l'affichage en cas d'erreur
                 return;
               }
               updateContent();
