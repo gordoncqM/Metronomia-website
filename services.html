@@ -41,6 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css">
 </head>
 <body>
 
@@ -67,9 +68,9 @@
             <div class="language-selector">
               <button id="language-btn" class="language-btn" data-i18n="language_btn">🌍 Langue</button>
               <div id="language-menu" class="language-menu">
-                <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
-                <button class="lang-option" data-lang="en">🇬🇧 English</button>
-                <button class="lang-option" data-lang="it">🇮🇹 Italiano</button>
+                <button class="lang-option" data-lang="fr"><span class="fi fi-fr"></span> Français</button>
+                <button class="lang-option" data-lang="en"><span class="fi fi-gb"></span> English</button>
+                <button class="lang-option" data-lang="it"><span class="fi fi-it"></span> Italiano</button>
               </div>
             </div>
           </li>
@@ -237,6 +238,7 @@
         }
         // Met à jour le contenu une fois i18next prêt
         updateContent();
+        updateLanguageButton(i18next.language);
       });
   
     // Fonction pour mettre à jour le contenu
@@ -249,7 +251,15 @@
       document.documentElement.lang = i18next.language; // Met à jour l'attribut lang du document
     }
   
-    // Gère le sélecteur de langue
+
+    function updateLanguageButton(lang) {
+      const languageBtn = document.getElementById('language-btn');
+      const activeOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
+      if (languageBtn && activeOption) {
+        languageBtn.innerHTML = activeOption.innerHTML;
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const languageBtn = document.getElementById('language-btn');
       const languageMenu = document.getElementById('language-menu');
@@ -276,6 +286,7 @@
                 return;
               }
               updateContent();
+              updateLanguageButton(lang);
               languageMenu.classList.remove('show');
             });
           });
