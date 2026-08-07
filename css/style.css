@@ -1275,3 +1275,8 @@ body:has(#apropos:target) a.nav__link--active[href="index.html"] {
 .lang-option:hover {
   background: #f0f4ff;
 }
+.fi {
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
